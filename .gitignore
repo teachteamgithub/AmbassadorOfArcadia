@@ -1,3 +1,9 @@
+.babelrc
+.buckconfig
+.flowconfig
+.gitattributes
+.watchmanconfig
+
 # OSX
 #
 .DS_Store

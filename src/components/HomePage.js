@@ -1,6 +1,14 @@
 import React, { Component } from 'react';
-import { ImageBackground, StyleSheet, View, Text } from 'react-native';
+import { 
+    ImageBackground, 
+    StyleSheet, 
+    View, 
+    Text, 
+    Dimensions 
+} from 'react-native';
 
+const SCREEN_WIDTH = Dimensions.get('screen').width;
+const SCREEN_HEIGHT = Dimensions.get('screen').height;
 const BACKGROUND_IMAGE = require('./../images/bg.png');
 
 export default class HomePage extends Component {
@@ -20,8 +28,8 @@ export default class HomePage extends Component {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        width: Screen.width,
-        height: Screen.height,
+        width: SCREEN_WIDTH,
+        height: SCREEN_HEIGHT,
         alignItems: 'center',
         padding: 20
     }
