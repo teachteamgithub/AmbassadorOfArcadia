@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
 
-import HomeScreen from './screens/HomeScreen';
-import ModalComponent  from './components/ModalComponent';
+import Routes from './Routes';
 
 export default class App extends Component {
     render() {
         return (
-            <HomeScreen />
+            <Routes />
         );
     }
 }

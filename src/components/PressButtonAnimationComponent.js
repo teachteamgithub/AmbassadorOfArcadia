@@ -3,10 +3,13 @@ import {
     View,
     Image,
     TouchableWithoutFeedback,
-    Animated
+    Animated,
+    Vibration
 } from 'react-native';
 
 import PropTypes from 'prop-types'; 
+
+const DURATION = 200;
 
 export default class AnimationButtonPress extends Component {
 
@@ -16,6 +19,10 @@ export default class AnimationButtonPress extends Component {
         this.state = {
             animatePress: new Animated.Value(1)
         }
+    }
+
+    onVibrate(vibrate) {
+        vibrate ? Vibration.vibrate(DURATION) : vibrate;
     }
 
     animatePressIn() {
@@ -33,12 +40,15 @@ export default class AnimationButtonPress extends Component {
     }
 
     render() {
+
+        const { image, width, height, actionPress, vibrate } = this.props;
+
         return (
             <View>
                 <TouchableWithoutFeedback
-                    onPressIn={_ => this.animatePressIn()}
-                    onPressOut={_ => this.animatePressOut()}
-                    onPress={_ => this.props.actionPress()}
+                    onPressIn={_ => { this.animatePressIn(); this.onVibrate(vibrate) }}
+                    onPressOut={_ => this.animatePressOut() }
+                    onPress={_ => actionPress() }
                     activeOpacity={0.7}>
                     <Animated.View style={{
                         transform: [{
@@ -46,8 +56,8 @@ export default class AnimationButtonPress extends Component {
                         }]
                     }}>
                         <Image
-                            style={{ width: this.props.width, height: this.props.height }}
-                            source={this.props.image} />
+                            style={{ width: width, height: height }}
+                            source={image} />
                     </Animated.View>
                 </TouchableWithoutFeedback>
             </View>
@@ -60,4 +70,5 @@ AnimationButtonPress.propTypes = {
     width: PropTypes.number.isRequired,
     height: PropTypes.number.isRequired,
     actionPress: PropTypes.func,
+    vibrate: PropTypes.bool
 };

@@ -6,8 +6,7 @@ import {
     Dimensions,
     BackHandler,
     Text,
-    Share,
-    Vibration
+    Share
 } from 'react-native';
 
 import PressButtonAnimationComponent from '../components/PressButtonAnimationComponent';
@@ -20,8 +19,6 @@ const EXIT_BUTTON = require('../assets/images/exit_game_button.png');
 const SHARE_BUTTON = require('../assets/images/share_button.png');
 const INFO_BUTTON = require('../assets/images/info_button.png');
 const CONFIG_BUTTON = require('../assets/images/config_button.png');
-
-const DURATION = 10000;
 
 export default class HomeScreen extends Component {
 
@@ -37,14 +34,6 @@ export default class HomeScreen extends Component {
             {
                 dialogTitle: 'Compartilhe com seus amigos'
             });
-    }
-
-    onVibrate() {
-        Vibration.vibrate(DURATION, true);
-    }
-
-    offVibrate() {
-        Vibration.cancel();
     }
 
     render() {
@@ -64,6 +53,7 @@ export default class HomeScreen extends Component {
                         width={120}
                         height={120}
                         actionPress={_ => _}
+                        vibrate={true}
                     />
                 </View>
                 <View style={styles.footer}>
