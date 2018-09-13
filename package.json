@@ -7,16 +7,23 @@
     "test": "jest"
   },
   "dependencies": {
-    "react": "16.4.1",
+    "prop-types": "^15.6.2",
+    "react": "^16.5.0",
     "react-native": "0.56.1"
   },
   "devDependencies": {
-    "babel-jest": "23.6.0",
-    "babel-preset-react-native": "^5",
+    "babel-jest": "^23.6.0",
+    "babel-preset-react-native": "^5.0.2",
+    "eslint": "^5.5.0",
     "jest": "23.6.0",
-    "react-test-renderer": "16.4.1"
+    "react-test-renderer": "^16.5.0"
   },
   "jest": {
     "preset": "react-native"
+  },
+  "rnpm": {
+    "assets": [
+      "./src/assets/fonts/"
+    ]
   }
 }
