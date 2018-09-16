@@ -9,7 +9,7 @@ import {
 
 import PropTypes from 'prop-types'; 
 
-const DURATION = 200;
+const DURATION = 400;
 
 export default class AnimationButtonPress extends Component {
 
@@ -56,7 +56,7 @@ export default class AnimationButtonPress extends Component {
                         }]
                     }}>
                         <Image
-                            style={{ width: width, height: height }}
+                            style={{ width, height }}
                             source={image} />
                     </Animated.View>
                 </TouchableWithoutFeedback>
@@ -69,6 +69,6 @@ AnimationButtonPress.propTypes = {
     image: PropTypes.node.isRequired,
     width: PropTypes.number.isRequired,
     height: PropTypes.number.isRequired,
-    actionPress: PropTypes.func,
+    actionPress: PropTypes.func.isRequired,
     vibrate: PropTypes.bool
 };

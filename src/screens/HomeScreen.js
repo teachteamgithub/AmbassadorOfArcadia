@@ -6,8 +6,10 @@ import {
     Dimensions,
     BackHandler,
     Text,
-    Share
+    Share,
+    StatusBar
 } from 'react-native';
+import { Actions } from 'react-native-router-flux';
 
 import PressButtonAnimationComponent from '../components/PressButtonAnimationComponent';
 
@@ -38,50 +40,54 @@ export default class HomeScreen extends Component {
 
     render() {
         return (
-            <ImageBackground
-                source={BACKGROUND_IMAGE}
-                style={styles.container}>
-                <View style={styles.header}>
-                    <Text style={styles.nameStyle}>
-                        AutismApp
-                        GAME
+            <View style={{flex: 1}}>
+                <StatusBar backgroundColor='#1e203d' />
+                <ImageBackground
+                    source={BACKGROUND_IMAGE}
+                    style={styles.container}>
+                    <View style={styles.header}>
+                        <Text style={styles.nameStyle}>
+                            AutismApp
+                            GAME
                     </Text>
-                </View>
-                <View style={styles.playButton}>
-                    <PressButtonAnimationComponent
-                        image={PLAY_BUTTON}
-                        width={120}
-                        height={120}
-                        actionPress={_ => _}
-                        vibrate={true}
-                    />
-                </View>
-                <View style={styles.footer}>
-                    <PressButtonAnimationComponent
-                        image={CONFIG_BUTTON}
-                        width={70}
-                        height={70}
-                    />
-                    <PressButtonAnimationComponent
-                        image={SHARE_BUTTON}
-                        width={70}
-                        height={70}
-                        actionPress={this.onShare.bind(this)}
-                    />
-                    <PressButtonAnimationComponent
-                        image={INFO_BUTTON}
-                        width={70}
-                        height={70}
-                        actionPress={_ => _}
-                    />
-                    <PressButtonAnimationComponent
-                        image={EXIT_BUTTON}
-                        width={70}
-                        height={70}
-                        actionPress={this.onExit.bind(this)}
-                    />
-                </View>
-            </ImageBackground>
+                    </View>
+                    <View style={styles.playButton}>
+                        <PressButtonAnimationComponent
+                            image={PLAY_BUTTON}
+                            width={120}
+                            height={120}
+                            actionPress={Actions.tabView.bind(this)}
+                            vibrate={true}
+                        />
+                    </View>
+                    <View style={styles.footer}>
+                        <PressButtonAnimationComponent
+                            image={CONFIG_BUTTON}
+                            width={70}
+                            height={70}
+                            actionPress={_=>_}
+                        />
+                        <PressButtonAnimationComponent
+                            image={SHARE_BUTTON}
+                            width={70}
+                            height={70}
+                            actionPress={this.onShare.bind(this)}
+                        />
+                        <PressButtonAnimationComponent
+                            image={INFO_BUTTON}
+                            width={70}
+                            height={70}
+                            actionPress={_ => _}
+                        />
+                        <PressButtonAnimationComponent
+                            image={EXIT_BUTTON}
+                            width={70}
+                            height={70}
+                            actionPress={this.onExit.bind(this)}
+                        />
+                    </View>
+                </ImageBackground>
+            </View>
         );
     }
 }
