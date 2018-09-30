@@ -1,17 +1,22 @@
 import React, { Component } from "react";
 import { Router, Scene, Stack, Tabs } from 'react-native-router-flux';
-import { Icon } from 'react-native-elements';
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
+
 
 import HomeScreen from './screens/HomeScreen';
 import LevelsScreen from './screens/LevelsScreen';
 import BadgesScreen from './screens/BadgesScreen';
+import EmotionalRecognitionScreen from './screens/EmotionalRecognitionScreen';
+import EmotionalRecognition from './screens/EmotionalRecognition'
+import EtAnimation from './components/EtAnimation'
 
 const IconTab = ({ focused, iconName }) => {
     return (
         <Icon
             size={23}
-            color={focused ? 'red' : 'blue'}
-            name={iconName}/>
+            color={focused ? '#fff' : '#aaa'}
+            name={iconName}
+        />
     );
 }
 
@@ -20,34 +25,38 @@ export default class Routes extends Component {
         return (
             <Router>
                 <Stack>
-                    <Scene key='homeScreen' component={HomeScreen} hideNavBar/>
+                    <Scene key='etAnimation' component={EtAnimation} hideNavBar />
+                    <Scene key='emotionalRecognition' component={EmotionalRecognition} hideNavBar/>
+                    <Scene key='homeScreen' component={HomeScreen} hideNavBar />
+                    <Scene key='emotionalRecognitionScreen' component={EmotionalRecognitionScreen} hideNavBar />
                     <Tabs
-                        key="tabView"
+                        key='tabView'
                         hideNavBar
-                        inactiveTintColor={'red'}
                         showLabel={true}
                         lazy={false}
                         showIcon={true}
-                        indicatorStyle={'green'}
-                        activeTintColor={'green'}
-                        tabStyle={{backgroundColor: '#ffd'}}
-                        tabBarStyle={{backgroundColor: '#ECF0F1', height: 54}}
-                        labelStyle={{ fontSize: 12, padding: 0, marginTop: 0, marginBottom: 0 }}
-                        tabBarPosition={'top'}>
+                        activeTintColor={'#fff'}
+                        tabBarStyle={{
+                            backgroundColor: '#1e203d',
+                            padding: 5
+                        }}
+                        labelStyle={{ fontSize: 12 }}
+                        upperCaseLabel
+                        tabBarPosition={'bottom'}>
                         <Scene
                             hideNavBar
                             key='levelScreen'
                             title='Aprenda'
                             component={LevelsScreen}
-                            iconName='gamepad'
+                            iconName='gamepad-variant'
                             tabBarIcon={IconTab}
-                            drawerIcon={IconTab}                            
+                            drawerIcon={IconTab}
                         />
                         <Scene
                             hideNavBar
                             key="badgeScreen"
                             title="Conquistas"
-                            iconName='star'
+                            iconName='trophy'
                             component={BadgesScreen}
                             icon={IconTab}
                         />
