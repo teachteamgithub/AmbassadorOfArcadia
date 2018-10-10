@@ -50,7 +50,7 @@ export default class ButtonWithImage extends Component {
                         }]
                     }}>
                     <ImageBackground source={BUTTON_IDLE} style={styles.button}>
-                        <Text style={styles.textStyle}>áéíì</Text>
+                        <Text style={styles.textStyle}>{this.props.text}</Text>
                     </ImageBackground>
                 </Animated.View>
             </TouchableWithoutFeedback>
