@@ -4,7 +4,8 @@ import { metrics, colors } from '../../styles';
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1
+        flex: 1,
+        backgroundColor: 'transparent'
     },
     containerEt: {
         position: 'absolute',

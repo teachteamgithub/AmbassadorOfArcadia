@@ -7,8 +7,10 @@ import HomeScreen from './screens/HomeScreen';
 import LevelsScreen from './screens/LevelsScreen';
 import BadgesScreen from './screens/BadgesScreen';
 import EmotionalRecognitionScreen from './screens/EmotionalRecognitionScreen';
-import EmotionalRecognition from './screens/EmotionalRecognition'
-import EtAnimation from './components/EtAnimation'
+import EmotionalRecognition from './screens/EmotionalRecognition';
+import EtAnimation from './components/EtAnimation';
+import ButtonSquareWithPressEffect from './components/ButtonSquareWithPressEffect';
+import ModalBox from './components/ModalBox';
 
 const IconTab = ({ focused, iconName }) => {
     return (
@@ -25,8 +27,10 @@ export default class Routes extends Component {
         return (
             <Router>
                 <Stack>
-                    <Scene key='etAnimation' component={EtAnimation} hideNavBar />
                     <Scene key='emotionalRecognition' component={EmotionalRecognition} hideNavBar/>
+                    <Scene key='modalBox' component={ModalBox} hideNavBar />
+                    <Scene key='buttonSquareWithPressEffect' component={ButtonSquareWithPressEffect} hideNavBar />
+                    <Scene key='etAnimation' component={EtAnimation} hideNavBar />
                     <Scene key='homeScreen' component={HomeScreen} hideNavBar />
                     <Scene key='emotionalRecognitionScreen' component={EmotionalRecognitionScreen} hideNavBar />
                     <Tabs

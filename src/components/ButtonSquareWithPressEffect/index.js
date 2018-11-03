@@ -50,7 +50,7 @@ export default class ButtonSquareWithPressEffect extends PureComponent {
                             }]
                         }}>
                         <ImageBackground source={BUTTON_SQUARE} style={styles.bgImage}>
-                            <Text style={styles.textStyle}>Example</Text>
+                            <Text style={styles.textStyle}>{this.props.text}</Text>
                         </ImageBackground>
                     </Animated.View>
                 </TouchableWithoutFeedback>
@@ -58,3 +58,7 @@ export default class ButtonSquareWithPressEffect extends PureComponent {
         );
     }
 }
+
+ButtonSquareWithPressEffect.propTypes = {
+    text: PropTypes.string
+};

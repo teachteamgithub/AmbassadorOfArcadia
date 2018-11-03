@@ -4,7 +4,8 @@ import {
     Text,
     Image,
     TouchableWithoutFeedback,
-    Modal
+    Modal,
+    Alert
 } from 'react-native';
 
 import styles from './styles';
@@ -17,26 +18,23 @@ export default class EtAnimation extends Component {
         this.state = {
             modalVisible: true,
             actualText: 0,
-            texts: [
-                {
-                    id: 1,
-                    text: 'texto 1 v3qv3r vb g43bt bjjlkav jilnjver nnvae nnverpve nprenvew nvaen'
-                },
-                {
-                    id: 2,
-                    text: 'texto 2'
-                }
-            ]
+            texts: this.props.texts
         }
     }
 
     nextText() {
-        this.setState({ actualText: this.state.actualText + 1 });
+        let { texts, actualText } = this.state;
+        let textLen = texts.length - 1;
+        if (actualText === textLen) {
+            this.setModalVisible();
+        } else {
+            this.setState({ actualText: this.state.actualText + 1 });
+        }
     }
 
     showText() {
-        let     { texts, actualText } = this.state;
-        return <Text style={styles.textBalloon}>{actualText < texts.length ? texts[actualText].text : this.setModalVisible()}</Text>;
+        let { texts, actualText } = this.state;
+        return <Text style={styles.textBalloon}>{texts[actualText].text}</Text>;
     }
 
     setModalVisible() {

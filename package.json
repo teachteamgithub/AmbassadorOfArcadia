@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
+    "new:component": "cross-env ./scripts/new_component.sh",
     "android": "react-native run-android",
     "test": "jest"
   },
@@ -19,6 +20,7 @@
     "redux": "^4.0.0"
   },
   "devDependencies": {
+    "cross-env": "^5.2.0",
     "babel-jest": "^23.6.0",
     "babel-preset-react-native": "^5.0.2",
     "eslint": "^5.5.0",

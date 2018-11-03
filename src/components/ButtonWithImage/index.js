@@ -9,7 +9,7 @@ import {
 
 import styles from './styles';
 
-const BUTTON_IDLE = require('../../assets/images/button.png');
+const BUTTON_IDLE = require('../../assets/images/buttons/button_square_normal/button_square_normal.png');
 const BUTTON_PRESS = require('../../assets/images/button_press.png');
 
 export default class ButtonWithImage extends Component {
