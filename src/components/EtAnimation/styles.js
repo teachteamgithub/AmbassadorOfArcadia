@@ -5,7 +5,7 @@ import { metrics, colors } from '../../styles';
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: 'transparent'
+        backgroundColor: 'rgba(0, 0, 0, 0.5)'
     },
     containerEt: {
         position: 'absolute',
