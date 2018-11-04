@@ -74,7 +74,7 @@ log "Creating styles.js for ${COMPONENT}";
 cat > "$DIRECTORY/styles.js" <<- EOM
 import { StyleSheet } from 'react-native';
 
-import { } from '../../styles';
+import { fonts, colors, metrics } from '../../styles';
 
 export default styles = StyleSheet({
     container: {
