@@ -7,7 +7,9 @@ const styles = StyleSheet.create({
         fontFamily: fonts.fontPrimary,
         textAlign: 'center',
         color: colors.white,
-        elevation: 5
+        elevation: 5,
+        textShadowOffset: { width: 1.5, height: 1.5 },
+        textShadowColor: colors.darker
     },
 
     button: {

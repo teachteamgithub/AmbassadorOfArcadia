@@ -62,11 +62,12 @@ export default class ButtonWithImage extends Component {
         }
     }
 
-    renderButton(size, text) {
+    renderButton(size, text, action) {
         return (
             <TouchableWithoutFeedback
                 onPressIn={_ => this.animatePressIn()}
                 onPressOut={_ => this.animatePressOut()}
+                onPress={() => action()}
             >
                 <Animated.View
                     style={{
@@ -87,11 +88,12 @@ export default class ButtonWithImage extends Component {
     render() {
         const {
             size,
-            text
+            text,
+            action
         } = this.props;
         return (
             <View>
-                {size && text ? this.renderButton(size, text) : undefined}
+                {size && text ? this.renderButton(size, text, action) : undefined}
             </View>
         );
     }
