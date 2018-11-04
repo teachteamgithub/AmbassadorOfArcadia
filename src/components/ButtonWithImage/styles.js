@@ -1,19 +1,44 @@
 import { StyleSheet } from 'react-native';
 
-import { metrics, fonts, colors } from '../../styles';
+import { fonts, colors, metrics } from '../../styles';
 
 const styles = StyleSheet.create({
     textStyle: {
         fontFamily: fonts.fontPrimary,
-        fontSize: fonts.bigger,
         textAlign: 'center',
-        color: colors.white
+        color: colors.white,
+        elevation: 5
     },
 
     button: {
-        width: metrics.widthPercentageToDP('50%'),
-        height: metrics.widthPercentageToDP('20%'),
-        justifyContent: 'center',
+        justifyContent: 'center'
+    },
+
+    smallButton: {
+        width: metrics.widthPercentageToDP('20%'),
+        height: metrics.widthPercentageToDP('10%')
+    },
+
+    regularButton: {
+        width: metrics.widthPercentageToDP('30%'),
+        height: metrics.widthPercentageToDP('15%')
+    },
+
+    bigButton: {
+        width: metrics.widthPercentageToDP('40%'),
+        height: metrics.widthPercentageToDP('20%')
+    },
+
+    smallFont: {
+        fontSize: fonts.small
+    },
+
+    regularFont: {
+        fontSize: fonts.regular
+    },
+
+    bigFont: {
+        fontSize: fonts.big
     }
 });
 

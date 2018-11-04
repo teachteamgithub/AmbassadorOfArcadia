@@ -10,7 +10,6 @@ import {
 import styles from './styles';
 
 const BUTTON_IDLE = require('../../assets/images/buttons/button_square_normal/button_square_normal.png');
-const BUTTON_PRESS = require('../../assets/images/button_press.png');
 
 export default class ButtonWithImage extends Component {
 
@@ -37,7 +36,33 @@ export default class ButtonWithImage extends Component {
         }).start();
     }
 
-    render() {
+    sizeButton(size) {
+        switch (size) {
+            case 'small':
+                return styles.smallButton;
+            case 'regular':
+                return styles.regularButton;
+            case 'big':
+                return styles.bigButton;
+            default:
+                return styles.regularButton;
+        }
+    }
+
+    sizeFont(size) {
+        switch (size) {
+            case 'small':
+                return styles.smallFont;
+            case 'regular':
+                return styles.regularFont;
+            case 'big':
+                return styles.bigFont;
+            default:
+                return styles.regularFont;
+        }
+    }
+
+    renderButton(size, text) {
         return (
             <TouchableWithoutFeedback
                 onPressIn={_ => this.animatePressIn()}
@@ -49,11 +74,25 @@ export default class ButtonWithImage extends Component {
                             scale: this.state.animatePress
                         }]
                     }}>
-                    <ImageBackground source={BUTTON_IDLE} style={styles.button}>
-                        <Text style={styles.textStyle}>{this.props.text}</Text>
+                    <ImageBackground
+                        source={BUTTON_IDLE}
+                        style={{ ...styles.button, ...this.sizeButton(size) }}>
+                        <Text style={{ ...styles.textStyle, ...this.sizeFont(size) }}>{text}</Text>
                     </ImageBackground>
                 </Animated.View>
             </TouchableWithoutFeedback>
+        );
+    }
+
+    render() {
+        const {
+            size,
+            text
+        } = this.props;
+        return (
+            <View>
+                {size && text ? this.renderButton(size, text) : undefined}
+            </View>
         );
     }
 }
