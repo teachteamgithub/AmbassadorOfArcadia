@@ -40,27 +40,36 @@ export default class EtAnimation extends Component {
     setModalVisible() {
         this.setState({ modalVisible: !this.state.modalVisible });
     }
-    
+
     render() {
         return (
-            <Modal
-                animationType="slide"
-                transparent={false}
-                visible={this.state.modalVisible}
-                style={styles.container}
-                onRequestClose={() => Alert.alert('Modal has been closed.')}>
-                <TouchableWithoutFeedback onPress={() => this.nextText()}>
-                    <View style={styles.containerBalloon}>
-                        <View style={styles.talkBalloonSquare}>
-                            {this.showText()}
-                        </View>
-                        <View style={styles.talkBalloonTriangle} />
+            <View>
+                {this.state.modalVisible ?
+                    <View
+                        style={styles.container}
+                    >
+                        <Modal
+                            animationType="slide"
+                            transparent
+                            visible={this.state.modalVisible}
+                            onRequestClose={() => Alert.alert('Modal has been closed.')}>
+                            <View style={styles.bgModal}>
+                                <TouchableWithoutFeedback onPress={() => this.nextText()}>
+                                    <View style={styles.containerBalloon}>
+                                        <View style={styles.talkBalloonSquare}>
+                                            {this.showText()}
+                                        </View>
+                                        <View style={styles.talkBalloonTriangle} />
+                                    </View>
+                                </TouchableWithoutFeedback>
+                                <View style={styles.containerEt}>
+                                    <Image source={ET} style={styles.et} />
+                                </View>
+                            </View>
+                        </Modal>
                     </View>
-                </TouchableWithoutFeedback>
-                <View style={styles.containerEt}>
-                    <Image source={ET} style={styles.et} />
-                </View>
-            </Modal>
+                    : undefined}
+            </View>
         );
     }
 }
