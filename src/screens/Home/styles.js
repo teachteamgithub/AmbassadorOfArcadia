@@ -15,7 +15,7 @@ const styles = StyleSheet.create({
     },
     nameStyle: {
         fontFamily: fonts.fontPrimary,
-        fontSize: fonts.huge,
+        fontSize: fonts.bigger,
         textAlign: 'center',
         color: colors.white
     },

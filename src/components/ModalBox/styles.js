@@ -5,9 +5,13 @@ import { colors, metrics, fonts } from '../../styles';
 export default styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: 'rgba(0, 0, 0, 0.5)',
     },
 
+    modalOuterView: {
+        flex: 1,
+        backgroundColor: 'rgba(0, 0, 0, 0.5)',
+    },
+    
     containerModal: {
         backgroundColor: colors.borderModal,
         borderRadius: 5,

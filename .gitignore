@@ -2,8 +2,6 @@
 .flowconfig
 .gitattributes
 .watchmanconfig
-src/components/ModalComponent.js
-data
 
 # OSX
 #

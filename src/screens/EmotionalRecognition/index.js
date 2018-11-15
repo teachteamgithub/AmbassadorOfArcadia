@@ -4,9 +4,12 @@ import {
     Image,
     Text,
     ImageBackground,
-    Alert
+    Alert,
+    AsyncStorage
 } from 'react-native';
 
+import recognitionOfEmotions from '../../data/levels/recognitionOfEmotions';
+import ModalBox from '../../components/ModalBox';
 import EtAnimation from '../../components/EtAnimation';
 import Button from '../../components/Button';
 import styles from './styles';
@@ -20,143 +23,33 @@ export default class EmotionRecognition extends Component {
         this.state = {
             indexQuestion: 0,
             hits: 0,
-            level: {
-                "id": 1,
-                "name": "Reconhecimento de Emoções",
-                "category": "questionsAndAnswersWithImages",
-                "isAvailable": true,
-                "isLocked": true,
-                "percentageOfHits": 0,
-                "created_at": "2018-01-20T03:34:06.599Z",
-                "questions": [
-                    {
-                        "id": 1,
-                        "level": "Reconhecimento de Emoções",
-                        "question": "O que a criança está sentindo?",
-                        "image": 1,
-                        "answered": false,
-                        "options": [
-                            {
-                                "id": 1,
-                                "text": "Raiva",
-                                "correct": false
-                            },
-                            {
-                                "id": 2,
-                                "text": "Alegria",
-                                "correct": false
-                            },
-                            {
-                                "id": 3,
-                                "text": "Tristeza",
-                                "correct": true
-                            },
-                            {
-                                "id": 4,
-                                "text": "Medo",
-                                "correct": false
-                            }
-                        ]
-                    },
-                    {
-                        "id": 2,
-                        "level": "Reconhecimento de Emoções",
-                        "question": "XXXXXXX",
-                        "image": 1,
-                        "answered": false,
-                        "options": [
-                            {
-                                "id": 1,
-                                "text": "Raiva",
-                                "correct": false
-                            },
-                            {
-                                "id": 2,
-                                "text": "Alegria",
-                                "correct": false
-                            },
-                            {
-                                "id": 3,
-                                "text": "xxxxxxxxxxxxxxxxxx",
-                                "correct": true
-                            },
-                            {
-                                "id": 4,
-                                "text": "Medo",
-                                "correct": false
-                            }
-                        ]
-                    },
-                    {
-                        "id": 3,
-                        "level": "Reconhecimento de Emoções",
-                        "question": "O que a criança está sentindo?",
-                        "image": 1,
-                        "answered": false,
-                        "options": [
-                            {
-                                "id": 1,
-                                "text": "yyyyyy",
-                                "correct": false
-                            },
-                            {
-                                "id": 2,
-                                "text": "Alegria",
-                                "correct": false
-                            },
-                            {
-                                "id": 3,
-                                "text": "Tristeza",
-                                "correct": true
-                            },
-                            {
-                                "id": 4,
-                                "text": "Medo",
-                                "correct": false
-                            }
-                        ]
-                    },
-                    {
-                        "id": 4,
-                        "level": "Reconhecimento de Emoções",
-                        "question": "XXXXXXX",
-                        "image": 1,
-                        "answered": false,
-                        "options": [
-                            {
-                                "id": 1,
-                                "text": "aaaaaaaaaaaaa",
-                                "correct": false
-                            },
-                            {
-                                "id": 2,
-                                "text": "Alegria",
-                                "correct": false
-                            },
-                            {
-                                "id": 3,
-                                "text": "xxxxxxxxxxxxxxxxxx",
-                                "correct": true
-                            },
-                            {
-                                "id": 4,
-                                "text": "Medo",
-                                "correct": false
-                            }
-                        ]
-                    }
-                ]
-            }
+            onTheLevel: 0,
+            level: recognitionOfEmotions,
+            showModalSuccess: false,
+            showModalFail: false,
+            showEt: false
         }
     }
-
+    
     componentWillMount() {
-        this.shuffle(this.state.level.questions);
-
+        this.configData();
+    }
+    
+    async configData() {
+        let lvl = await AsyncStorage.getItem('levelTwo');
+        await this.setState({ onTheLevel: parseInt(lvl), showEt: true });
+        await this.shuffleQuestions();
     }
 
-    componentDidMount() {
-
+    shuffleQuestions() {
+        let { onTheLevel, level } = this.state;
+        if (onTheLevel === 0) {
+            this.shuffle(level.questionsLevelOne);
+        } else if (onTheLevel === 1) {
+            this.shuffle(level.questionsLevelTwo);
+        } else {
+            this.shuffle(level.questionsLevelThree);
+        }
     }
 
     addHit() {
@@ -165,15 +58,64 @@ export default class EmotionRecognition extends Component {
         });
     }
 
+    showModal() {
+        if (this.state.showModalSuccess) {
+            return (
+                <ModalBox
+                    title='Parabéns!'
+                    content='Você concluiu este nível.'
+                    sizeContent='big'
+                    okButton={true}
+                    sizeOkButton='small'
+                    textOkButton='Ok'
+                    showModal={this.state.showModalSuccess}
+                />
+            );
+        } else if (this.state.showModalFail) {
+            return (
+                <ModalBox
+                    title='Ops!'
+                    content='Você não atingiu a pontuação suficiente para concluir este nível, tente novamente.'
+                    sizeContent='big'
+                    okButton={true}
+                    sizeOkButton='small'
+                    textOkButton='Ok'
+                    showModal={this.state.showModalFail}
+                />
+            );
+        }
+    }
+
+    finalizedLevel(sizeQuestions) {
+        if (this.state.hits === sizeQuestions) {
+            AsyncStorage.getItem('levelTwo')
+                .then(res => {
+                    let _newLevel = parseInt(res) + 1;
+                    let newLevel = String(_newLevel);
+                    AsyncStorage.setItem('levelTwo', newLevel);
+                    this.setState({ showModalSuccess: true });
+                });
+        } else {
+            this.setState({ showModalFail: true })
+        }
+    }
+
     nextQuestion() {
-        const { indexQuestion, questions } = this.state;
-        let questionsLen = questions.length - 1;
-        if (indexQuestion === questionsLen) {
+        let { indexQuestion, level, onTheLevel } = this.state;
+        let questionsLen = 0;
+        if (onTheLevel === 0) {
+            questionsLen = level.questionsLevelOne.length - 1;
+        } else if (onTheLevel === 1) {
+            questionsLen = level.questionsLevelTwo.length - 1;
+        } else {
+            questionsLen = level.questionsLevelThree.length - 1;
+        }
+        if (indexQuestion >= questionsLen) {
+            this.finalizedLevel(questionsLen + 1);
+        } else {
             this.setState({
                 indexQuestion: indexQuestion + 1
             });
-        } else {
-            Alert.alert('última');
         }
     }
 
@@ -215,7 +157,6 @@ export default class EmotionRecognition extends Component {
             array[currentIndex] = array[randomIndex];
             array[randomIndex] = temporaryValue;
         }
-
         return array;
     }
 
@@ -223,37 +164,112 @@ export default class EmotionRecognition extends Component {
         return this.shuffle(options);
     }
 
-    getImage(question, onTheLevel) {
-        switch (question) {
-            case 1:
-                return require('../../assets/images/menino-triste.jpg');
-            default:
-                break;
+    getImage(question, level) {
+        if (level === 0) {
+            switch (question) {
+                case 1:
+                    return require('../../assets/images/levels/emotionalRecognition/levelOne/man-astonished.png');
+                case 2:
+                    return require('../../assets/images/levels/emotionalRecognition/levelOne/man-happy.png');
+                case 3:
+                    return require('../../assets/images/levels/emotionalRecognition/levelOne/man-rage.png');
+                case 4:
+                    return require('../../assets/images/levels/emotionalRecognition/levelOne/man-sad.png');
+            }
+        } else if (level === 1) {
+            switch (question) {
+                case 1:
+                    return require('../../assets/images/levels/emotionalRecognition/levelTwo/man-astonished.png');
+                case 2:
+                    return require('../../assets/images/levels/emotionalRecognition/levelTwo/man-happy.png');
+                case 3:
+                    return require('../../assets/images/levels/emotionalRecognition/levelTwo/man-rage.png');
+                case 4:
+                    return require('../../assets/images/levels/emotionalRecognition/levelTwo/man-sad.png');
+                case 5:
+                    return require('../../assets/images/levels/emotionalRecognition/levelTwo/woman-astonished.png');
+                case 6:
+                    return require('../../assets/images/levels/emotionalRecognition/levelTwo/woman-happy-2.png');
+                case 7:
+                    return require('../../assets/images/levels/emotionalRecognition/levelTwo/woman-happy.png');
+                case 8:
+                    return require('../../assets/images/levels/emotionalRecognition/levelTwo/woman-rage.png');
+                case 9:
+                    return require('../../assets/images/levels/emotionalRecognition/levelTwo/woman-sad.png');
+            }
+        } else {
+
         }
     }
 
-    render() {
+    showQuestions(questions) {
         return (
-            <ImageBackground style={styles.bgImage} source={BG}>
-                <EtAnimation
-                    texts={[
-                        { text: 'Olá! Você poderia me ajudar a identificar o que as pessoas a seguir estão sentindo?' },
-                        { text: 'Vou te mostrar algumas imagens e você deverá selecionar a opção correta.' },
-                        { text: 'Vamos lá!'}
-                    ]}
-                />
+            <View style={styles.container}>
                 <View style={styles.headerContainer}>
-                    <Image style={styles.image} source={this.getImage(this.state.level.questions[0].image)} />
-                    <Text style={styles.question}>{this.state.level.questions[this.state.indexQuestion].question.toUpperCase()}</Text>
+                    <Image style={styles.image} source={this.getImage(questions[this.state.indexQuestion].image, this.state.onTheLevel)} />
+                    <Text style={styles.question}>{questions[this.state.indexQuestion].question.toUpperCase()}</Text>
                 </View>
                 <View style={styles.optionsContainer}>
-                    {this.showOptions(this.state.level.questions[this.state.indexQuestion].options).map(option =>
+                    {this.showOptions(questions[this.state.indexQuestion].options).map(option =>
                         <View key={option.id} style={styles.option}>
                             <Button text={option.text} action={this.checkAnswer.bind(this, option.correct)} />
                         </View>
                     )}
                 </View>
-            </ImageBackground>
+            </View>
         );
+    }
+
+    getSelectQuestions() {
+        if (this.state.onTheLevel === 0) {
+            return this.showQuestions(this.state.level.questionsLevelOne);
+        } else if (this.state.onTheLevel === 1) {
+            return this.showQuestions(this.state.level.questionsLevelTwo);
+        } else {
+            return this.showQuestions(this.state.level.questionsLevelThree);
+        }
+    }
+
+    getEtPerLevel() {
+        if (this.state.onTheLevel === 0 && this.state.showEt) {
+            return (
+                <EtAnimation
+                    texts={[
+                        { text: 'Olá! Você poderia me ajudar a identificar o que as pessoas a seguir estão sentindo?' },
+                        { text: 'Vou te mostrar algumas imagens e você deverá selecionar a opção correta.' },
+                        { text: 'Vamos lá!' }
+                    ]}
+                />
+            );
+        }
+        if (this.state.onTheLevel === 1 && this.state.showEt) {
+            return (
+                <EtAnimation
+                    texts={[
+                        { text: 'et2' },
+                    ]}
+                />
+            );
+        }
+        if (this.state.onTheLevel === 2 && this.state.showEt) {
+            return (
+                <EtAnimation
+                    texts={[
+                        { text: 'et3' },
+                    ]}
+                />
+            );
+        }
+    }
+
+    render() {
+        
+        return (
+            <ImageBackground style={styles.bgImage} source={BG}>
+                {this.getSelectQuestions()}
+                {this.getEtPerLevel()}
+                {this.showModal()}
+            </ImageBackground>
+        )
     }
 }

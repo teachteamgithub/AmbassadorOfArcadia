@@ -4,22 +4,33 @@ import { colors, fonts, metrics } from '../../styles';
 
 const styles = StyleSheet.create({
     button: {
-        backgroundColor: colors.primary,
-        width: metrics.widthPercentageToDP('100%') - 30,
-        height: (metrics.widthPercentageToDP('100%') - 30) * 0.15,
-        borderRadius: 200,
+        width: metrics.widthPercentageToDP('90%'),
+        height: metrics.widthPercentageToDP('18%'),
         alignItems: 'center',
         justifyContent: 'center',
-        borderWidth: .5,
-        borderColor: colors.darker,
+        padding: metrics.padding
     },
 
     text: {
-        fontSize: metrics.heightPercentageToDP('2.5%'),
+        fontFamily: fonts.fontPrimary,
+        textAlign: 'center',
         color: colors.white,
-        fontWeight: 'bold',
-        fontFamily: 'JustAnotherHand-Regular'
-    }
+        elevation: 5,
+        textShadowOffset: { width: .7, height: .7 },
+        textShadowColor: colors.darker,
+    },
+
+    fontSizeBig: {
+        fontSize: fonts.big
+    },
+
+    fontSizeRegular: {
+        fontSize: fonts.regular
+    },
+
+    fontSizeSmall: {
+        fontSize: fonts.small
+    },
 });
 
 export default styles;

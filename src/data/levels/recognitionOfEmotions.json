@@ -1,0 +1,713 @@
+{
+    "id": 1,
+    "name": "Reconhecimento de Emoções",
+    "category": "questionsAndAnswersWithImages",
+    "isAvailable": true,
+    "questionsLevelOne": [
+        {
+            "id": 1,
+            "question": "O que o garoto está sentindo?",
+            "image": 1,
+            "options": [
+                {
+                    "id": 1,
+                    "text": "Raiva",
+                    "correct": false
+                },
+                {
+                    "id": 2,
+                    "text": "Alegria",
+                    "correct": false
+                },
+                {
+                    "id": 3,
+                    "text": "Tristeza",
+                    "correct": false
+                },
+                {
+                    "id": 4,
+                    "text": "Espanto",
+                    "correct": true
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "question": "O que o garoto está sentido?",
+            "image": 2,
+            "options": [
+                {
+                    "id": 1,
+                    "text": "Raiva",
+                    "correct": false
+                },
+                {
+                    "id": 2,
+                    "text": "Tristeza",
+                    "correct": false
+                },
+                {
+                    "id": 3,
+                    "text": "Alegria",
+                    "correct": true
+                },
+                {
+                    "id": 4,
+                    "text": "Espanto",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "question": "O que o garoto está sentido?",
+            "image": 3,
+            "options": [
+                {
+                    "id": 1,
+                    "text": "Alegria",
+                    "correct": false
+                },
+                {
+                    "id": 2,
+                    "text": "Espanto",
+                    "correct": false
+                },
+                {
+                    "id": 3,
+                    "text": "Tristeza",
+                    "correct": false
+                },
+                {
+                    "id": 4,
+                    "text": "Raiva",
+                    "correct": true
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "question": "O que o garoto está sentindo?",
+            "image": 4,
+            "options": [
+                {
+                    "id": 1,
+                    "text": "Tristeza",
+                    "correct": true
+                },
+                {
+                    "id": 2,
+                    "text": "Alegria",
+                    "correct": false
+                },
+                {
+                    "id": 3,
+                    "text": "Raiva",
+                    "correct": false
+                },
+                {
+                    "id": 4,
+                    "text": "Espanto",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "question": "O que o garoto está sentindo?",
+            "image": 1,
+            "options": [
+                {
+                    "id": 1,
+                    "text": "Raiva",
+                    "correct": false
+                },
+                {
+                    "id": 2,
+                    "text": "Alegria",
+                    "correct": false
+                },
+                {
+                    "id": 3,
+                    "text": "Tristeza",
+                    "correct": false
+                },
+                {
+                    "id": 4,
+                    "text": "Espanto",
+                    "correct": true
+                }
+            ]
+        },
+        {
+            "id": 6,
+            "question": "O que o garoto está sentido?",
+            "image": 2,
+            "options": [
+                {
+                    "id": 1,
+                    "text": "Raiva",
+                    "correct": false
+                },
+                {
+                    "id": 2,
+                    "text": "Tristeza",
+                    "correct": false
+                },
+                {
+                    "id": 3,
+                    "text": "Alegria",
+                    "correct": true
+                },
+                {
+                    "id": 4,
+                    "text": "Espanto",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "id": 7,
+            "question": "O que o garoto está sentido?",
+            "image": 3,
+            "options": [
+                {
+                    "id": 1,
+                    "text": "Alegria",
+                    "correct": false
+                },
+                {
+                    "id": 2,
+                    "text": "Espanto",
+                    "correct": false
+                },
+                {
+                    "id": 3,
+                    "text": "Tristeza",
+                    "correct": false
+                },
+                {
+                    "id": 4,
+                    "text": "Raiva",
+                    "correct": true
+                }
+            ]
+        },
+        {
+            "id": 8,
+            "question": "O que o garoto está sentindo?",
+            "image": 4,
+            "options": [
+                {
+                    "id": 1,
+                    "text": "Tristeza",
+                    "correct": true
+                },
+                {
+                    "id": 2,
+                    "text": "Alegria",
+                    "correct": false
+                },
+                {
+                    "id": 3,
+                    "text": "Raiva",
+                    "correct": false
+                },
+                {
+                    "id": 4,
+                    "text": "Espanto",
+                    "correct": false
+                }
+            ]
+        }
+    ],
+    "questionsLevelTwo": [
+        {
+            "id": 1,
+            "question": "O que o garoto está sentindo?",
+            "image": 1,
+            "options": [
+                {
+                    "id": 1,
+                    "text": "Tristeza",
+                    "correct": false
+                },
+                {
+                    "id": 2,
+                    "text": "Alegria",
+                    "correct": false
+                },
+                {
+                    "id": 3,
+                    "text": "Raiva",
+                    "correct": false
+                },
+                {
+                    "id": 4,
+                    "text": "Espanto",
+                    "correct": true
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "question": "O que o garoto está sentindo?",
+            "image": 2,
+            "options": [
+                {
+                    "id": 1,
+                    "text": "Tristeza",
+                    "correct": false
+                },
+                {
+                    "id": 2,
+                    "text": "Alegria",
+                    "correct": true
+                },
+                {
+                    "id": 3,
+                    "text": "Raiva",
+                    "correct": false
+                },
+                {
+                    "id": 4,
+                    "text": "Espanto",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "question": "O que o garoto está sentindo?",
+            "image": 3,
+            "options": [
+                {
+                    "id": 1,
+                    "text": "Tristeza",
+                    "correct": false
+                },
+                {
+                    "id": 2,
+                    "text": "Alegria",
+                    "correct": false
+                },
+                {
+                    "id": 3,
+                    "text": "Raiva",
+                    "correct": true
+                },
+                {
+                    "id": 4,
+                    "text": "Espanto",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "question": "O que o garoto está sentindo?",
+            "image": 4,
+            "options": [
+                {
+                    "id": 1,
+                    "text": "Tristeza",
+                    "correct": true
+                },
+                {
+                    "id": 2,
+                    "text": "Alegria",
+                    "correct": false
+                },
+                {
+                    "id": 3,
+                    "text": "Raiva",
+                    "correct": false
+                },
+                {
+                    "id": 4,
+                    "text": "Espanto",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "question": "O que a garota está sentindo?",
+            "image": 5,
+            "options": [
+                {
+                    "id": 1,
+                    "text": "Tristeza",
+                    "correct": false
+                },
+                {
+                    "id": 2,
+                    "text": "Alegria",
+                    "correct": false
+                },
+                {
+                    "id": 3,
+                    "text": "Raiva",
+                    "correct": false
+                },
+                {
+                    "id": 4,
+                    "text": "Espanto",
+                    "correct": true
+                }
+            ]
+        },
+        {
+            "id": 6,
+            "question": "O que a garota está sentindo?",
+            "image": 6,
+            "options": [
+                {
+                    "id": 1,
+                    "text": "Tristeza",
+                    "correct": false
+                },
+                {
+                    "id": 2,
+                    "text": "Alegria",
+                    "correct": true
+                },
+                {
+                    "id": 3,
+                    "text": "Raiva",
+                    "correct": false
+                },
+                {
+                    "id": 4,
+                    "text": "Espanto",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "id": 7,
+            "question": "O que a garota está sentindo?",
+            "image": 7,
+            "options": [
+                {
+                    "id": 1,
+                    "text": "Tristeza",
+                    "correct": false
+                },
+                {
+                    "id": 2,
+                    "text": "Alegria",
+                    "correct": true
+                },
+                {
+                    "id": 3,
+                    "text": "Raiva",
+                    "correct": false
+                },
+                {
+                    "id": 4,
+                    "text": "Espanto",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "id": 8,
+            "question": "O que a garota está sentindo?",
+            "image": 8,
+            "options": [
+                {
+                    "id": 1,
+                    "text": "Tristeza",
+                    "correct": false
+                },
+                {
+                    "id": 2,
+                    "text": "Alegria",
+                    "correct": false
+                },
+                {
+                    "id": 3,
+                    "text": "Raiva",
+                    "correct": true
+                },
+                {
+                    "id": 4,
+                    "text": "Espanto",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "id": 9,
+            "question": "O que a garota está sentindo?",
+            "image": 9,
+            "options": [
+                {
+                    "id": 1,
+                    "text": "Tristeza",
+                    "correct": true
+                },
+                {
+                    "id": 2,
+                    "text": "Alegria",
+                    "correct": false
+                },
+                {
+                    "id": 3,
+                    "text": "Raiva",
+                    "correct": false
+                },
+                {
+                    "id": 4,
+                    "text": "Espanto",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "id": 10,
+            "question": "O que o garoto está sentindo?",
+            "image": 1,
+            "options": [
+                {
+                    "id": 1,
+                    "text": "Tristeza",
+                    "correct": false
+                },
+                {
+                    "id": 2,
+                    "text": "Alegria",
+                    "correct": false
+                },
+                {
+                    "id": 3,
+                    "text": "Raiva",
+                    "correct": false
+                },
+                {
+                    "id": 4,
+                    "text": "Espanto",
+                    "correct": true
+                }
+            ]
+        },
+        {
+            "id": 11,
+            "question": "O que o garoto está sentindo?",
+            "image": 2,
+            "options": [
+                {
+                    "id": 1,
+                    "text": "Tristeza",
+                    "correct": false
+                },
+                {
+                    "id": 2,
+                    "text": "Alegria",
+                    "correct": true
+                },
+                {
+                    "id": 3,
+                    "text": "Raiva",
+                    "correct": false
+                },
+                {
+                    "id": 4,
+                    "text": "Espanto",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "id": 12,
+            "question": "O que o garoto está sentindo?",
+            "image": 3,
+            "options": [
+                {
+                    "id": 1,
+                    "text": "Tristeza",
+                    "correct": false
+                },
+                {
+                    "id": 2,
+                    "text": "Alegria",
+                    "correct": false
+                },
+                {
+                    "id": 3,
+                    "text": "Raiva",
+                    "correct": true
+                },
+                {
+                    "id": 4,
+                    "text": "Espanto",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "id": 13,
+            "question": "O que o garoto está sentindo?",
+            "image": 4,
+            "options": [
+                {
+                    "id": 1,
+                    "text": "Tristeza",
+                    "correct": true
+                },
+                {
+                    "id": 2,
+                    "text": "Alegria",
+                    "correct": false
+                },
+                {
+                    "id": 3,
+                    "text": "Raiva",
+                    "correct": false
+                },
+                {
+                    "id": 4,
+                    "text": "Espanto",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "id": 14,
+            "question": "O que a garota está sentindo?",
+            "image": 5,
+            "options": [
+                {
+                    "id": 1,
+                    "text": "Tristeza",
+                    "correct": false
+                },
+                {
+                    "id": 2,
+                    "text": "Alegria",
+                    "correct": false
+                },
+                {
+                    "id": 3,
+                    "text": "Raiva",
+                    "correct": false
+                },
+                {
+                    "id": 4,
+                    "text": "Espanto",
+                    "correct": true
+                }
+            ]
+        },
+        {
+            "id": 15,
+            "question": "O que a garota está sentindo?",
+            "image": 6,
+            "options": [
+                {
+                    "id": 1,
+                    "text": "Tristeza",
+                    "correct": false
+                },
+                {
+                    "id": 2,
+                    "text": "Alegria",
+                    "correct": true
+                },
+                {
+                    "id": 3,
+                    "text": "Raiva",
+                    "correct": false
+                },
+                {
+                    "id": 4,
+                    "text": "Espanto",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "id": 16,
+            "question": "O que a garota está sentindo?",
+            "image": 7,
+            "options": [
+                {
+                    "id": 1,
+                    "text": "Tristeza",
+                    "correct": false
+                },
+                {
+                    "id": 2,
+                    "text": "Alegria",
+                    "correct": true
+                },
+                {
+                    "id": 3,
+                    "text": "Raiva",
+                    "correct": false
+                },
+                {
+                    "id": 4,
+                    "text": "Espanto",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "id": 17,
+            "question": "O que a garota está sentindo?",
+            "image": 8,
+            "options": [
+                {
+                    "id": 1,
+                    "text": "Tristeza",
+                    "correct": false
+                },
+                {
+                    "id": 2,
+                    "text": "Alegria",
+                    "correct": false
+                },
+                {
+                    "id": 3,
+                    "text": "Raiva",
+                    "correct": true
+                },
+                {
+                    "id": 4,
+                    "text": "Espanto",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "id": 18,
+            "question": "O que a garota está sentindo?",
+            "image": 9,
+            "options": [
+                {
+                    "id": 1,
+                    "text": "Tristeza",
+                    "correct": true
+                },
+                {
+                    "id": 2,
+                    "text": "Alegria",
+                    "correct": false
+                },
+                {
+                    "id": 3,
+                    "text": "Raiva",
+                    "correct": false
+                },
+                {
+                    "id": 4,
+                    "text": "Espanto",
+                    "correct": false
+                }
+            ]
+        }
+    ],
+    "questionsLevelThree": []
+}

@@ -1,6 +1,6 @@
 import { StyleSheet } from 'react-native';
 
-import { metrics, fonts } from '../../styles';
+import { metrics, fonts, colors } from '../../styles';
 
 const styles = StyleSheet.create({
     backgroundImage: {
@@ -8,6 +8,7 @@ const styles = StyleSheet.create({
         width: metrics.widthPercentageToDP('100%'),
         height: metrics.heightPercentageToDP('100%')
     },
+
     container: {
         flex: 1,
         flexDirection: 'column',
@@ -15,16 +16,18 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         padding: metrics.padding
     },
+
     levelButton: {
         marginTop: 15,
         marginBottom: 5,
         alignItems: 'center'
     },
+    
     phaseTextStyle: {
         fontFamily: fonts.fontPrimary,
         fontSize: fonts.small,
         textAlign: 'center',
-        color: '#bbb',
+        color: colors.lighter,
         marginTop: 0,
         marginBottom: 20
     }

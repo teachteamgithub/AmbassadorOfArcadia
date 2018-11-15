@@ -26,8 +26,7 @@ function info() {
   printf "\n${CYAN}%s${END}\n" "$*";
 }
 
-if [ $# -lt 1 ]
-  then
+if [ $# -lt 1 ]; then
     echo "You need to provide the name COMPONENT";
     exit 0;
 fi
@@ -44,19 +43,18 @@ mkdir src/components/${COMPONENT};
 log "Creating index.js for ${COMPONENT}";
 
 cat > "$DIRECTORY/index.js" <<- EOM
-import React, { PureComponent } from 'react';
+import React from 'react';
 import { View } from 'react-native';
 import PropTypes from 'prop-types';
 
 import styles from './styles';
 
-const ${COMPONENT} = ({
-  
-}) => (
-  <View style={styles.container}>
-
-  </View>
-);
+const ${COMPONENT} = props => {
+  return (
+    <View style={styles.container}>
+    </View>
+  );
+}
 
 ${COMPONENT}.propTypes = {
   
@@ -78,7 +76,7 @@ import { fonts, colors, metrics } from '../../styles';
 
 export default styles = StyleSheet({
     container: {
-
+      flex: 1,
     }
 });
 EOM

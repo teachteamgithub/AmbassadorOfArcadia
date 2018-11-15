@@ -3,14 +3,19 @@ import { Router, Scene, Stack, Tabs } from 'react-native-router-flux';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
 
 
-import HomeScreen from './screens/HomeScreen';
-import LevelsScreen from './screens/LevelsScreen';
+import HomeScreen from './screens/Home';
+import LevelsScreen from './screens/Levels';
 import BadgesScreen from './screens/BadgesScreen';
 import EmotionalRecognitionScreen from './screens/EmotionalRecognitionScreen';
 import EmotionalRecognition from './screens/EmotionalRecognition';
 import EtAnimation from './components/EtAnimation';
 import ButtonSquareWithPressEffect from './components/ButtonSquareWithPressEffect';
 import ModalBox from './components/ModalBox';
+import ButtonWithImage from './components/ButtonWithImage';
+import DragAndDrop from './screens/DragAndDrop';
+import GetChildInfo from './screens/GetChildInfo';
+import Presentation from './screens/Presentation';
+import Button from './components/Button';
 
 const IconTab = ({ focused, iconName }) => {
     return (
@@ -27,12 +32,10 @@ export default class Routes extends Component {
         return (
             <Router>
                 <Stack>
-                    <Scene key='emotionalRecognition' component={EmotionalRecognition} hideNavBar/>
-                    <Scene key='modalBox' component={ModalBox} hideNavBar />
-                    <Scene key='buttonSquareWithPressEffect' component={ButtonSquareWithPressEffect} hideNavBar />
-                    <Scene key='etAnimation' component={EtAnimation} hideNavBar />
+                    <Scene key='presentation' component={Presentation} hideNavBar />
+                    <Scene key='emotionalRecognition' component={EmotionalRecognition} hideNavBar />
+                    <Scene key='button' component={Button} hideNavBar />
                     <Scene key='homeScreen' component={HomeScreen} hideNavBar />
-                    <Scene key='emotionalRecognitionScreen' component={EmotionalRecognitionScreen} hideNavBar />
                     <Tabs
                         key='tabView'
                         hideNavBar
@@ -65,6 +68,13 @@ export default class Routes extends Component {
                             icon={IconTab}
                         />
                     </Tabs>
+                    <Scene key='getChildInfo' component={GetChildInfo} hideNavBar />
+                    <Scene key='dragAndDrop' component={DragAndDrop} hideNavBar />
+                    <Scene key='modalBox' component={ModalBox} hideNavBar />
+                    <Scene key='etAnimation' component={EtAnimation} hideNavBar />
+                    <Scene key='buttonWithImage' component={ButtonWithImage} hideNavBar />
+                    <Scene key='buttonSquareWithPressEffect' component={ButtonSquareWithPressEffect} hideNavBar />
+                    <Scene key='emotionalRecognitionScreen' component={EmotionalRecognitionScreen} hideNavBar />
                 </Stack>
             </Router >
         );

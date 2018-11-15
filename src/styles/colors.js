@@ -7,6 +7,8 @@ export default {
     lighter: '#eee',
     white: '#FEFEFF',
     transparent: 'rgba(0, 0, 0, 0)',
+    borderModal: '#636a7c',
+    contentModal: '#deebf1'
 };
 
 //#27102A

@@ -7,7 +7,7 @@ import {
     Image,
     TouchableWithoutFeedback
 } from 'react-native';
-import PropTypes from 'prop-types';
+import { Actions } from 'react-native-router-flux';
 
 import ButtonWithImage from '../ButtonWithImage';
 import styles from './styles';
@@ -18,7 +18,7 @@ export default class ModalBox extends PureComponent {
     constructor(props) {
         super(props);
         this.state = {
-            modalVisible: false
+            modalVisible: true
         }
     }
 
@@ -26,7 +26,7 @@ export default class ModalBox extends PureComponent {
         this.setState({ modalVisible: !this.state.modalVisible });
     }
 
-    sizeContent(size) {
+    sizeTextContent(size) {
         switch (size) {
             case 'small':
                 return styles.smallFont;
@@ -39,6 +39,11 @@ export default class ModalBox extends PureComponent {
         }
     }
 
+    backLevelsScreen() {
+        Actions.pop();
+        setTimeout(() => Actions.refresh({ test: true }), 1000);
+    }
+
     render() {
         const {
             title,
@@ -49,65 +54,58 @@ export default class ModalBox extends PureComponent {
             sizeOkButton,
             textOkButton,
             modalAction,
-            visible
+            showModal
         } = this.props;
         return (
             <View>
-                {visible ? this.setModalVisible : undefined}
-                <View
-                    style={styles.container}
-                >
-                    <Modal
-                        animationType="slide"
-                        transparent
-                        visible={this.state.modalVisible}
-                        onRequestClose={() => {
-                            Alert.alert('Modal has been closed.');
-                        }}
-                    >
-                        <View style={styles.containerModal}>
-                            <View style={styles.closeButtonContainer}>
-                                {title ? <View style={styles.containerTitle}>
-                                    <Text style={styles.title}>{title}</Text>
-                                </View> : undefined}
-                                <View style={styles.containerCloseButton}>
-                                    {hasCloseButton ?
-                                        <TouchableWithoutFeedback onPress={() => this.setModalVisible()}>
-                                            <Image source={BUTTON_CLOSE} style={styles.closeButton} />
-                                        </TouchableWithoutFeedback>
-                                        : undefined}
-                                </View>
-                            </View>
-                            {content ?
-                                <View style={styles.contentContainer}>
-                                    <Text style={{ ...styles.textContent, ...this.sizeContent(sizeContent) }}>
-                                        {content}
-                                    </Text>
-                                    {okButton ?
-                                        <View style={styles.okButton}>
-                                            <TouchableWithoutFeedback>
+                {showModal ?
+                    <View style={styles.container}>
+                        <Modal
+                            animationType="slide"
+                            transparent
+                            visible={this.state.modalVisible}
+                            onRequestClose={() => {
+                                console.log('Modal has been closed.');
+                            }}
+                        >
+                            <View style={styles.modalOuterView}>
+                                <View style={styles.containerModal}>
+                                    <View style={styles.closeButtonContainer}>
+                                        {title ?
+                                            <View style={styles.containerTitle}>
+                                                <Text style={styles.title}>{title}</Text>
+                                            </View>
+                                            : undefined}
+                                        <View style={styles.containerCloseButton}>
+                                            {hasCloseButton ?
+                                                <TouchableWithoutFeedback onPress={() => { this.setModalVisible(); }}>
+                                                    <Image source={BUTTON_CLOSE} style={styles.closeButton} />
+                                                </TouchableWithoutFeedback>
+                                                : undefined}
+                                        </View>
+                                    </View>
+                                    <View style={styles.contentContainer}>
+                                        <Text style={{ ...styles.textContent, ...this.sizeTextContent(sizeContent) }}>
+                                            {content}
+                                        </Text>
+                                        {okButton ?
+                                            <View style={styles.okButton}>
                                                 <ButtonWithImage
                                                     size={sizeOkButton}
                                                     text={textOkButton}
                                                     action={() => {
-                                                        modalAction();
+                                                        this.backLevelsScreen();
                                                         this.setModalVisible();
                                                     }} />
-                                            </TouchableWithoutFeedback>
-                                        </View>
-                                        : undefined}
+                                            </View>
+                                            : undefined}
+                                    </View>
                                 </View>
-                                : undefined}
-                            <View style={styles.buttonsBottomContainer}></View>
-                        </View>
-                    </Modal>
-                </View>
+                            </View>
+                        </Modal>
+                    </View>
+                    : undefined}
             </View>
         );
     }
 }
-
-ModalBox.protoType = {
-    tile: PropTypes.string,
-    hasCloseButton: PropTypes.bool
-};

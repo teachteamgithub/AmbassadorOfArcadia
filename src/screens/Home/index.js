@@ -2,60 +2,55 @@ import React, { Component } from 'react';
 import {
     ImageBackground,
     View,
-    Dimensions,
     BackHandler,
     Text,
     Share,
-    StatusBar
+    StatusBar,
+    AsyncStorage
 } from 'react-native';
 import { Actions } from 'react-native-router-flux';
-import { connect } from 'react-redux';
-import styles from './styles';
+import Tooltip from 'react-native-walkthrough-tooltip';
 
+import styles from './styles';
 import PressButtonAnimationComponent from '../../components/ButtonWithAnimation';
-/*
-import emotionalRecognitionRepository from '../db/emotionalRecognitionRepository';
-import realm from '../db/allSchemas';
-import recognitionOfEmotions from '../data/levels/recognitionOfEmotions.json';
-import { initializeEmotionalRecognition } from '../actions/RealmAction';
-*/
-const { width, height } = Dimensions.get('window');
 
 const BACKGROUND_IMAGE = require('../../assets/images/bg.png');
 const PLAY_BUTTON = require('../../assets/images/play_button.png');
 const EXIT_BUTTON = require('../../assets/images/exit_game_button.png');
 const SHARE_BUTTON = require('../../assets/images/share_button.png');
 const INFO_BUTTON = require('../../assets/images/info_button.png');
-const CONFIG_BUTTON = require('../../assets/images/config_button.png');
 
 class HomeScreen extends Component {
 
-    componentWillMount() {
-        const er = {
-            id: 2,
-            name: '',
-            category: '',
-            isLocked: '',
-            onTheLevel: '',
-            questionsLevelOne: [
-                {
-                    id: 1,
-                    question: '',
-                    image: '',
-                    options: [
-                        {
-                            id: 1,
-                            text: '',
-                            isCorrect: false
-                        }
-                    ]
-                }
-            ]
-        };
+    constructor(props) {
+        super(props);
+        this.state = {
+            toolTipVisible: false
+        }
+    }
 
-        //emotionalRecognitionRepository.insert(er);
-        //const a = emotionalRecognitionRepository.queryAll();
-        //alert(a);
+    componentWillMount() {
+        this.configData();
+    }
+
+    configData() {
+        AsyncStorage.clear();
+
+        AsyncStorage.getItem('levelOne')
+            .then(res => res !== null ?
+                '' : AsyncStorage.setItem('levelOne', '0'));
+
+        AsyncStorage.getItem('levelTwo')
+            .then(res => res !== null ?
+                '' : AsyncStorage.setItem('levelTwo', '0'));
+
+        AsyncStorage.getItem('levelThree')
+            .then(res => res !== null ?
+                '' : AsyncStorage.setItem('levelThree', '0'));
+
+        AsyncStorage.getItem('levelFour')
+            .then(res => res !== null ?
+                '' : AsyncStorage.setItem('levelFour', '0'));
     }
 
     onExit() {
@@ -72,6 +67,16 @@ class HomeScreen extends Component {
             });
     }
 
+    async checkClick() {
+        let info = await AsyncStorage.getItem('childInfo');
+        await info !== null ? Actions.tabView() : this.setState({ toolTipVisible: true });
+    }
+
+    checkClickInfo() {
+        this.state.toolTipVisible ? 
+            this.setState({ toolTipVisible: false }) : Actions.getChildInfo();
+    }
+
     render() {
         return (
             <View style={{ flex: 1 }}>
@@ -81,7 +86,7 @@ class HomeScreen extends Component {
                     style={styles.container}>
                     <View style={styles.header}>
                         <Text style={styles.nameStyle}>
-                            ã
+                            AutismAppGame
                         </Text>
                     </View>
                     <View style={styles.playButton}>
@@ -89,29 +94,30 @@ class HomeScreen extends Component {
                             image={PLAY_BUTTON}
                             width={150}
                             height={150}
-                            actionPress={Actions.tabView.bind(this)}
-                            vibrate={true}
+                            actionPress={this.checkClick.bind(this)}
                         />
                     </View>
                     <View style={styles.footer}>
-                        <PressButtonAnimationComponent
-                            image={CONFIG_BUTTON}
-                            width={70}
-                            height={70}
-                            actionPress={_ => _}
-                        />
                         <PressButtonAnimationComponent
                             image={SHARE_BUTTON}
                             width={70}
                             height={70}
                             actionPress={this.onShare.bind(this)}
                         />
-                        <PressButtonAnimationComponent
-                            image={INFO_BUTTON}
-                            width={70}
-                            height={70}
-                            actionPress={_ => _}
-                        />
+                        <Tooltip
+                            animated
+                            isVisible={this.state.toolTipVisible}
+                            content={<Text>Preencha algumas informações antes de continuar</Text>}
+                            placement="top"
+                            onClose={() => this.setState({ toolTipVisible: false })}
+                        >
+                            <PressButtonAnimationComponent
+                                image={INFO_BUTTON}
+                                width={70}
+                                height={70}
+                                actionPress={this.checkClickInfo.bind(this)}
+                            />
+                        </Tooltip>
                         <PressButtonAnimationComponent
                             image={EXIT_BUTTON}
                             width={70}
