@@ -7,6 +7,7 @@ const fontPercentageToDP = heightPercent => {
 };
 
 export default {
+    huge: fontPercentageToDP('5%'),
     bigger: fontPercentageToDP('3.5%'),
     big: fontPercentageToDP('2.7%'),
     regular: fontPercentageToDP('2.2%'),
