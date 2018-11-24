@@ -11,6 +11,8 @@ import {
 import styles from './styles';
 
 const ET = require('../../assets/images/et.png');
+const ET2 = require('../../assets/images/et-2.png');
+const ET3 = require('../../assets/images/et-3.png');
 
 export default class EtAnimation extends Component {
     constructor(props) {
@@ -18,7 +20,8 @@ export default class EtAnimation extends Component {
         this.state = {
             modalVisible: true,
             actualText: 0,
-            texts: this.props.texts
+            texts: this.props.texts,
+            et: this.props.et
         }
     }
 
@@ -39,6 +42,19 @@ export default class EtAnimation extends Component {
 
     setModalVisible() {
         this.setState({ modalVisible: !this.state.modalVisible });
+    }
+
+    getEt() {
+        switch (this.state.et) {
+            case 1:
+                return ET;
+            case 2:
+                return ET2;
+            case 3:
+                return ET3;
+            default:
+                return ET;
+        }
     }
 
     render() {
@@ -63,7 +79,7 @@ export default class EtAnimation extends Component {
                                     </View>
                                 </TouchableWithoutFeedback>
                                 <View style={styles.containerEt}>
-                                    <Image source={ET} style={styles.et} />
+                                    <Image source={this.getEt()} style={styles.et} />
                                 </View>
                             </View>
                         </Modal>
