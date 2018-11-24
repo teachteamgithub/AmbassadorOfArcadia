@@ -5,7 +5,8 @@ import {
     Text,
     TextInput,
     Picker,
-    AsyncStorage
+    AsyncStorage,
+    Keyboard
 } from 'react-native';
 import { Actions } from 'react-native-router-flux';
 
@@ -38,7 +39,7 @@ export default class GetChildInfo extends PureComponent {
         }
     }
 
-    saveDatas() {
+    async saveDatas() {
         let obj = {
             name: this.state.name,
             age: this.state.age,
@@ -46,8 +47,9 @@ export default class GetChildInfo extends PureComponent {
             hairColor: this.state.hairColor,
             hairSize: this.state.hairSize
         }
-        AsyncStorage.setItem('childInfo', JSON.stringify(obj))
-            .then(_ => Actions.pop());
+        await AsyncStorage.setItem('childInfo', JSON.stringify(obj));
+        Keyboard.dismiss();
+        Actions.pop();
     }
 
     render() {
