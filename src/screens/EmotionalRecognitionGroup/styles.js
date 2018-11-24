@@ -125,8 +125,8 @@ const styles = StyleSheet.create({
     },
 
     imageGame: {
-        width: metrics.widthPercentageToDP('65%'),
-        height: metrics.widthPercentageToDP('65%'),
+        width: metrics.widthPercentageToDP('50%'),
+        height: metrics.widthPercentageToDP('50%'),
         borderRadius: metrics.widthPercentageToDP('70%') * 0.5
     },
 

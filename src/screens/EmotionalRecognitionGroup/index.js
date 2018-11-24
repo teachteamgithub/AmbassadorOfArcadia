@@ -340,7 +340,7 @@ class EmotionalRecognitionGroup extends Component {
             return (
                 <View style={styles.container}>
                     <View style={styles.headerContainerGame}>
-                        <Image style={styles.imageGame} source={this.getImage(questions[indexQuestion].image, this.state.onTheLevel)} />
+                        <Image style={styles.imageGame} resizeMode={'cover'} source={this.getImage(questions[indexQuestion].image, this.state.onTheLevel)} />
                         <Text style={styles.questionGame}>{questions[indexQuestion].question.toUpperCase()}</Text>
                     </View>
                     <View style={styles.optionsContainerGame}>
