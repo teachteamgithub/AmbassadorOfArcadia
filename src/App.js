@@ -3,7 +3,7 @@ import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 
 import Routes from './Routes';
-import reducers from './reducers';
+import reducers from './store/reducers';
 
 export default class App extends Component {
     render() {
