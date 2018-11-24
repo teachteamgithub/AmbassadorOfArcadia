@@ -29,6 +29,8 @@ export default (state = INITIAL_STATE, action) => {
     switch (action.type) {
         case 'changePlayers':
             return { ...state, players: action.payload };
+        case 'addPoint':
+            return { ...state, players: action.payload };
     }
     return state;
 }
