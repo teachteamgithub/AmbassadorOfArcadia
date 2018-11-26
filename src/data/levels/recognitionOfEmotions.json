@@ -358,114 +358,6 @@
             ]
         },
         {
-            "id": 6,
-            "question": "O que a garota está sentindo?",
-            "image": 6,
-            "options": [
-                {
-                    "id": 1,
-                    "text": "Tristeza",
-                    "correct": false
-                },
-                {
-                    "id": 2,
-                    "text": "Alegria",
-                    "correct": true
-                },
-                {
-                    "id": 3,
-                    "text": "Raiva",
-                    "correct": false
-                },
-                {
-                    "id": 4,
-                    "text": "Espanto",
-                    "correct": false
-                }
-            ]
-        },
-        {
-            "id": 7,
-            "question": "O que a garota está sentindo?",
-            "image": 7,
-            "options": [
-                {
-                    "id": 1,
-                    "text": "Tristeza",
-                    "correct": false
-                },
-                {
-                    "id": 2,
-                    "text": "Alegria",
-                    "correct": true
-                },
-                {
-                    "id": 3,
-                    "text": "Raiva",
-                    "correct": false
-                },
-                {
-                    "id": 4,
-                    "text": "Espanto",
-                    "correct": false
-                }
-            ]
-        },
-        {
-            "id": 8,
-            "question": "O que a garota está sentindo?",
-            "image": 8,
-            "options": [
-                {
-                    "id": 1,
-                    "text": "Tristeza",
-                    "correct": false
-                },
-                {
-                    "id": 2,
-                    "text": "Alegria",
-                    "correct": false
-                },
-                {
-                    "id": 3,
-                    "text": "Raiva",
-                    "correct": true
-                },
-                {
-                    "id": 4,
-                    "text": "Espanto",
-                    "correct": false
-                }
-            ]
-        },
-        {
-            "id": 9,
-            "question": "O que a garota está sentindo?",
-            "image": 9,
-            "options": [
-                {
-                    "id": 1,
-                    "text": "Tristeza",
-                    "correct": true
-                },
-                {
-                    "id": 2,
-                    "text": "Alegria",
-                    "correct": false
-                },
-                {
-                    "id": 3,
-                    "text": "Raiva",
-                    "correct": false
-                },
-                {
-                    "id": 4,
-                    "text": "Espanto",
-                    "correct": false
-                }
-            ]
-        },
-        {
             "id": 10,
             "question": "O que o garoto está sentindo?",
             "image": 1,
@@ -599,6 +491,116 @@
                     "correct": true
                 }
             ]
+        }
+    ],
+    "questionsLevelThree": [
+        {
+            "id": 6,
+            "question": "O que a garota está sentindo?",
+            "image": 6,
+            "options": [
+                {
+                    "id": 1,
+                    "text": "Tristeza",
+                    "correct": false
+                },
+                {
+                    "id": 2,
+                    "text": "Alegria",
+                    "correct": true
+                },
+                {
+                    "id": 3,
+                    "text": "Raiva",
+                    "correct": false
+                },
+                {
+                    "id": 4,
+                    "text": "Espanto",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "id": 7,
+            "question": "O que a garota está sentindo?",
+            "image": 7,
+            "options": [
+                {
+                    "id": 1,
+                    "text": "Tristeza",
+                    "correct": false
+                },
+                {
+                    "id": 2,
+                    "text": "Alegria",
+                    "correct": true
+                },
+                {
+                    "id": 3,
+                    "text": "Raiva",
+                    "correct": false
+                },
+                {
+                    "id": 4,
+                    "text": "Espanto",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "id": 8,
+            "question": "O que a garota está sentindo?",
+            "image": 8,
+            "options": [
+                {
+                    "id": 1,
+                    "text": "Tristeza",
+                    "correct": false
+                },
+                {
+                    "id": 2,
+                    "text": "Alegria",
+                    "correct": false
+                },
+                {
+                    "id": 3,
+                    "text": "Raiva",
+                    "correct": true
+                },
+                {
+                    "id": 4,
+                    "text": "Espanto",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "id": 9,
+            "question": "O que a garota está sentindo?",
+            "image": 9,
+            "options": [
+                {
+                    "id": 1,
+                    "text": "Tristeza",
+                    "correct": true
+                },
+                {
+                    "id": 2,
+                    "text": "Alegria",
+                    "correct": false
+                },
+                {
+                    "id": 3,
+                    "text": "Raiva",
+                    "correct": false
+                },
+                {
+                    "id": 4,
+                    "text": "Espanto",
+                    "correct": false
+                }
+            ]
         },
         {
             "id": 15,
@@ -708,6 +710,5 @@
                 }
             ]
         }
-    ],
-    "questionsLevelThree": []
+    ]
 }
