@@ -59,6 +59,7 @@
 		978B9D77B49749FDB4E5B332 /* Slackey.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A27F2CD8D8B742469E283305 /* Slackey.ttf */; };
 		3DA4D1EE495247DE82BC36C5 /* libRNCamera.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DEC082E609DC4A18B81C7DBA /* libRNCamera.a */; };
 		45FC5391D0224199B74F1F25 /* Supercell-Magic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2720FD297AD944958BF22C9E /* Supercell-Magic.ttf */; };
+		7F4270E8B1384CE494F7CE67 /* libRNToastNative.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E2C70EFD4094C24970687B6 /* libRNToastNative.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -389,6 +390,8 @@
 		FAAFF781D7E244F4881ADCB4 /* RNCamera.xcodeproj */ = {isa = PBXFileReference; name = "RNCamera.xcodeproj"; path = "../node_modules/react-native-camera/ios/RNCamera.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
 		DEC082E609DC4A18B81C7DBA /* libRNCamera.a */ = {isa = PBXFileReference; name = "libRNCamera.a"; path = "libRNCamera.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
 		2720FD297AD944958BF22C9E /* Supercell-Magic.ttf */ = {isa = PBXFileReference; name = "Supercell-Magic.ttf"; path = "../src/assets/fonts/Supercell-Magic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		3787BDD1E6DE4C0CAFAA0E60 /* RNToastNative.xcodeproj */ = {isa = PBXFileReference; name = "RNToastNative.xcodeproj"; path = "../node_modules/react-native-toast-native/ios/RNToastNative.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
+		2E2C70EFD4094C24970687B6 /* libRNToastNative.a */ = {isa = PBXFileReference; name = "libRNToastNative.a"; path = "libRNToastNative.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -420,6 +423,7 @@
 				78A5575724344CA1959415FF /* libRCTOrientation.a in Frameworks */,
 				A4043AD2FD1D443ABDCAD6CA /* libRNVectorIcons.a in Frameworks */,
 				3DA4D1EE495247DE82BC36C5 /* libRNCamera.a in Frameworks */,
+				7F4270E8B1384CE494F7CE67 /* libRNToastNative.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -609,6 +613,7 @@
 				5F12C7B23CD24999A90624CE /* RCTOrientation.xcodeproj */,
 				8C896FEA3DDF42DD8E92744D /* RNVectorIcons.xcodeproj */,
 				FAAFF781D7E244F4881ADCB4 /* RNCamera.xcodeproj */,
+				3787BDD1E6DE4C0CAFAA0E60 /* RNToastNative.xcodeproj */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -1282,12 +1287,14 @@
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AutismApp.app/AutismApp";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-orientation/iOS/RCTOrientation/**",
 					"$(SRCROOT)/../node_modules/react-native-vector-icons/RNVectorIconsManager",
 					"$(SRCROOT)/../node_modules/react-native-camera/ios/**",
+					"$(SRCROOT)/../node_modules/react-native-toast-native/ios",
 				);
 			};
 			name = Debug;
@@ -1308,12 +1315,14 @@
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AutismApp.app/AutismApp";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-orientation/iOS/RCTOrientation/**",
 					"$(SRCROOT)/../node_modules/react-native-vector-icons/RNVectorIconsManager",
 					"$(SRCROOT)/../node_modules/react-native-camera/ios/**",
+					"$(SRCROOT)/../node_modules/react-native-toast-native/ios",
 				);
 			};
 			name = Release;
@@ -1338,6 +1347,7 @@
 					"$(SRCROOT)/../node_modules/react-native-orientation/iOS/RCTOrientation/**",
 					"$(SRCROOT)/../node_modules/react-native-vector-icons/RNVectorIconsManager",
 					"$(SRCROOT)/../node_modules/react-native-camera/ios/**",
+					"$(SRCROOT)/../node_modules/react-native-toast-native/ios",
 				);
 			};
 			name = Debug;
@@ -1361,6 +1371,7 @@
 					"$(SRCROOT)/../node_modules/react-native-orientation/iOS/RCTOrientation/**",
 					"$(SRCROOT)/../node_modules/react-native-vector-icons/RNVectorIconsManager",
 					"$(SRCROOT)/../node_modules/react-native-camera/ios/**",
+					"$(SRCROOT)/../node_modules/react-native-toast-native/ios",
 				);
 			};
 			name = Release;
@@ -1390,12 +1401,14 @@
 				TVOS_DEPLOYMENT_TARGET = 9.2;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-orientation/iOS/RCTOrientation/**",
 					"$(SRCROOT)/../node_modules/react-native-vector-icons/RNVectorIconsManager",
 					"$(SRCROOT)/../node_modules/react-native-camera/ios/**",
+					"$(SRCROOT)/../node_modules/react-native-toast-native/ios",
 				);
 			};
 			name = Debug;
@@ -1425,12 +1438,14 @@
 				TVOS_DEPLOYMENT_TARGET = 9.2;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-orientation/iOS/RCTOrientation/**",
 					"$(SRCROOT)/../node_modules/react-native-vector-icons/RNVectorIconsManager",
 					"$(SRCROOT)/../node_modules/react-native-camera/ios/**",
+					"$(SRCROOT)/../node_modules/react-native-toast-native/ios",
 				);
 			};
 			name = Release;
@@ -1459,12 +1474,14 @@
 				TVOS_DEPLOYMENT_TARGET = 10.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-orientation/iOS/RCTOrientation/**",
 					"$(SRCROOT)/../node_modules/react-native-vector-icons/RNVectorIconsManager",
 					"$(SRCROOT)/../node_modules/react-native-camera/ios/**",
+					"$(SRCROOT)/../node_modules/react-native-toast-native/ios",
 				);
 			};
 			name = Debug;
@@ -1493,12 +1510,14 @@
 				TVOS_DEPLOYMENT_TARGET = 10.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-orientation/iOS/RCTOrientation/**",
 					"$(SRCROOT)/../node_modules/react-native-vector-icons/RNVectorIconsManager",
 					"$(SRCROOT)/../node_modules/react-native-camera/ios/**",
+					"$(SRCROOT)/../node_modules/react-native-toast-native/ios",
 				);
 			};
 			name = Release;

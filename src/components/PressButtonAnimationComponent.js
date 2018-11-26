@@ -7,8 +7,6 @@ import {
     Vibration
 } from 'react-native';
 
-import PropTypes from 'prop-types'; 
-
 const DURATION = 400;
 
 export default class AnimationButtonPress extends Component {
@@ -64,11 +62,3 @@ export default class AnimationButtonPress extends Component {
         );
     }
 }
-
-AnimationButtonPress.propTypes = {
-    image: PropTypes.node.isRequired,
-    width: PropTypes.number.isRequired,
-    height: PropTypes.number.isRequired,
-    actionPress: PropTypes.func.isRequired,
-    vibrate: PropTypes.bool
-};
