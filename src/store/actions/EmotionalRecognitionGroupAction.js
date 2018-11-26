@@ -4,10 +4,3 @@ export const changePlayers = players => {
         payload: players
     }
 };
-
-export const addPoint = id => {
-    return {
-        type: 'addPoint',
-        payload:
-    }
-};
