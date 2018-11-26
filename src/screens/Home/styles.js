@@ -9,13 +9,13 @@ const styles = StyleSheet.create({
         padding: metrics.padding
     },
     header: {
-        flex: 3,
+        flex: 2,
         alignItems: 'center',
         justifyContent: 'center'
     },
     nameStyle: {
         fontFamily: fonts.fontPrimary,
-        fontSize: fonts.bigger,
+        fontSize: fonts.huge,
         textAlign: 'center',
         color: colors.white
     },

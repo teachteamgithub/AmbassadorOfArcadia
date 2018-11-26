@@ -34,7 +34,7 @@ class HomeScreen extends Component {
     }
 
     configData() {
-        AsyncStorage.clear();
+        //AsyncStorage.clear();
 
         AsyncStorage.getItem('levelOne')
             .then(res => res !== null ?
@@ -44,13 +44,26 @@ class HomeScreen extends Component {
             .then(res => res !== null ?
                 '' : AsyncStorage.setItem('levelTwo', '0'));
 
-        AsyncStorage.getItem('levelThree')
+        /*AsyncStorage.getItem('levelThree')
             .then(res => res !== null ?
                 '' : AsyncStorage.setItem('levelThree', '0'));
 
         AsyncStorage.getItem('levelFour')
             .then(res => res !== null ?
-                '' : AsyncStorage.setItem('levelFour', '0'));
+                '' : AsyncStorage.setItem('levelFour', '0'));*/
+
+        const badges = {
+            'badgesOne': 'disable',
+            'badgesTwo': 'disable',
+            'badgesThree': 'disable',
+            'badgesFour': 'disable',
+            'badgesFive': 'disable',
+            'badgesSix': 'disable',
+        };
+        
+        AsyncStorage.getItem('badges')
+            .then(res => res !== null ?
+                '' : AsyncStorage.setItem('badges', JSON.stringify(badges)));
     }
 
     onExit() {
@@ -59,7 +72,7 @@ class HomeScreen extends Component {
 
     onShare() {
         Share.share({
-            title: 'AutismAppGame',
+            title: 'Embaixador de Arcádia',
             message: 'Jogue agora!'
         },
             {
@@ -73,7 +86,7 @@ class HomeScreen extends Component {
     }
 
     checkClickInfo() {
-        this.state.toolTipVisible ? 
+        this.state.toolTipVisible ?
             this.setState({ toolTipVisible: false }) : Actions.getChildInfo();
     }
 
@@ -86,7 +99,7 @@ class HomeScreen extends Component {
                     style={styles.container}>
                     <View style={styles.header}>
                         <Text style={styles.nameStyle}>
-                            AutismAppGame
+                            Embaixador de Arcádia
                         </Text>
                     </View>
                     <View style={styles.playButton}>
