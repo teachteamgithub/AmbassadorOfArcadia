@@ -12,11 +12,11 @@ const BUTTON_CLOSE = require('../../assets/images/buttons/close.png');
 
 const badge = [
   { image: require('../../assets/images/bagdes/1.png'), text: 'Conlecionador de Badges' },
-  { image: require('../../assets/images/bagdes/2.png'), text: 'Conlecionador de Badges' },
+  { image: require('../../assets/images/bagdes/2.png'), text: 'O Construtor de Amizades' },
   { image: require('../../assets/images/bagdes/3.png'), text: 'O Colecionador de Badges' },
   { image: require('../../assets/images/bagdes/4.png'), text: 'O Embaixador de Arcadia' },
   { image: require('../../assets/images/bagdes/5.png'), text: 'O Guerreiro de Jupiter' },
-  { image: require('../../assets/images/bagdes/6.png'), text: 'O amigo da vizinhaça' },
+  { image: require('../../assets/images/bagdes/6.png'), text: 'O Amigo da Vizinhaça' },
 ];
 
 class ModalBadge extends PureComponent {
