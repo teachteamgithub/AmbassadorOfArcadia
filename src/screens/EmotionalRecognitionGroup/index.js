@@ -93,11 +93,11 @@ class EmotionalRecognitionGroup extends Component {
     takePicture = async id => {
         if (this.camera) {
             const options = {
-                quality: 0.4,
+                quality: 0.2,
                 base64: true,
                 doNotSave: true,
                 fixOrientation: true,
-                mirrorImage: true
+                mirrorImage: false
             };
             const data = await this.camera.takePictureAsync(options);
             let players = await this.state.players.map(player => player.id === id ? { ...player, image: { uri: `data:image/jpeg;base64,${data.base64}` } } : player);
