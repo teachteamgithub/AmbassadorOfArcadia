@@ -27,14 +27,14 @@ export default class EmotionRecognition extends Component {
             level: recognitionOfEmotions,
             showModalSuccess: false,
             showModalFail: false,
-            showEt: false
+            showEt: false,
         }
     }
-    
+
     componentWillMount() {
         this.configData();
     }
-    
+
     async configData() {
         let lvl = await AsyncStorage.getItem('levelTwo');
         await this.setState({ onTheLevel: parseInt(lvl), showEt: true });
@@ -188,6 +188,9 @@ export default class EmotionRecognition extends Component {
                     return require('../../assets/images/levels/emotionalRecognition/levelTwo/man-sad.png');
                 case 5:
                     return require('../../assets/images/levels/emotionalRecognition/levelTwo/woman-astonished.png');
+            }
+        } else {
+            switch (question) {
                 case 6:
                     return require('../../assets/images/levels/emotionalRecognition/levelTwo/woman-happy-2.png');
                 case 7:
@@ -197,8 +200,6 @@ export default class EmotionRecognition extends Component {
                 case 9:
                     return require('../../assets/images/levels/emotionalRecognition/levelTwo/woman-sad.png');
             }
-        } else {
-
         }
     }
 
@@ -234,19 +235,25 @@ export default class EmotionRecognition extends Component {
         if (this.state.onTheLevel === 0 && this.state.showEt) {
             return (
                 <EtAnimation
+                    et={1}
                     texts={[
                         { text: 'Olá! Você poderia me ajudar a identificar o que as pessoas a seguir estão sentindo?' },
                         { text: 'Vou te mostrar algumas imagens e você deverá selecionar a opção correta.' },
                         { text: 'Vamos lá!' }
-                    ]}
+                    ]
+                    }
                 />
             );
         }
         if (this.state.onTheLevel === 1 && this.state.showEt) {
             return (
                 <EtAnimation
+                    et={2}
                     texts={[
-                        { text: 'et2' },
+                        { text: 'Oi, meu irmão me contou que você o ajudou' },
+                        { text: 'Você poderia me ajudar também?' },
+                        { text: 'Preciso de ajuda pra entender as emoções que os humanos possuem' },
+                        { text: 'Vamos lá!' },
                     ]}
                 />
             );
@@ -254,8 +261,12 @@ export default class EmotionRecognition extends Component {
         if (this.state.onTheLevel === 2 && this.state.showEt) {
             return (
                 <EtAnimation
+                    et={3}
                     texts={[
-                        { text: 'et3' },
+                        { text: 'Olá, meus irmãos me contaram que você está sempre pronto a ajudar quando é preciso' },
+                        { text: 'Você pode me ajudar também?' },
+                        { text: 'Preciso de ajuda pra entender as emoções que os humanos possuem' },
+                        { text: 'Vamos lá!' },
                     ]}
                 />
             );
@@ -263,7 +274,6 @@ export default class EmotionRecognition extends Component {
     }
 
     render() {
-        
         return (
             <ImageBackground style={styles.bgImage} source={BG}>
                 {this.getSelectQuestions()}

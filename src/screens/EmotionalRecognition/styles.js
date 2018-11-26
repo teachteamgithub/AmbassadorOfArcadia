@@ -14,7 +14,7 @@ const styles = StyleSheet.create({
     },
 
     headerContainer: {
-        flex: 7,
+        flex: 5,
         padding: metrics.padding,
         alignItems: 'center',
         justifyContent: 'space-around',
@@ -22,9 +22,9 @@ const styles = StyleSheet.create({
     },
 
     image: {
-        width: metrics.widthPercentageToDP('70%'),
-        height: metrics.widthPercentageToDP('70%'),
-        borderRadius: metrics.widthPercentageToDP('70%') * 0.5
+        width: metrics.widthPercentageToDP('60%'),
+        height: metrics.widthPercentageToDP('60%'),
+        borderRadius: metrics.widthPercentageToDP('60%') * 0.5
     },
 
     question: {
@@ -40,12 +40,13 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         padding: metrics.padding,
-        justifyContent: 'space-around'
+        justifyContent: 'space-between',
     },
-
+    
     option: {
         color: colors.white,
         fontWeight: 'bold',
+        marginBottom: 5,
         fontFamily: fonts.fontPrimary
     },
 
