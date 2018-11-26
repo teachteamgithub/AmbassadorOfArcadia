@@ -32,8 +32,7 @@ export default class BadgesScreen extends PureComponent {
         this.state = {
             modalVisible: false,
             isModal: 1,
-            badges: {},
-            title: ''
+            badges: {}
         };
     }
 
@@ -41,16 +40,20 @@ export default class BadgesScreen extends PureComponent {
         this.configData();
     }
 
-    async configData() {
+    configData = async () => {
         let str = await AsyncStorage.getItem('badges');
-        await this.setState({ badges: JSON.parse(str)})
+        await this.setState({ badges: JSON.parse(str)});
     }
 
-    setModalVisible(value, title) {
-        this.setState({ modalVisible: !this.state.modalVisible, isModal: value, title });
+    setModalVisible = value => {
+        this.setState({ modalVisible: !this.state.modalVisible, isModal: value });
     }
 
-    setTitle(isEneable) {
+    closeModal = () => {
+        this.setState({ modalVisible: !this.state.modalVisible });
+    }
+
+    setTitle = (isEneable) => {
         isEneable === 'eneable' ? this.setState({ title: 'Conquistado' }) : '';
     }
 
@@ -60,7 +63,7 @@ export default class BadgesScreen extends PureComponent {
                 <Modal
                     badge={this.state.isModal}
                     show={this.state.modalVisible}
-                    onClose={() => this.setModalVisible(this.state.isModal)}
+                    onClose={() => this.closeModal()}
                     title={this.state.title}/>
                 <View style={styles.container}>
                     <View style={styles.badges}>
@@ -68,11 +71,7 @@ export default class BadgesScreen extends PureComponent {
                             image={this.state.badges.badgesOne === 'disable' ? badges.disable[0] : badges.eneable[0]}
                             width={100}
                             height={100}
-                            actionPress={
-                                this.setModalVisible.bind(
-                                    this,
-                                    1,
-                                    this.setTitle(this.state.badges.badgesOne))}
+                            actionPress={this.setModalVisible.bind(this, 1)}
                         />
                     </View>
                     <View style={styles.badges}>
@@ -80,7 +79,7 @@ export default class BadgesScreen extends PureComponent {
                             image={this.state.badges.badgesTwo === 'disable' ? badges.disable[1] : badges.eneable[1]}
                             width={100}
                             height={100}
-                            actionPress={this.setModalVisible.bind(this, 2, this.setTitle(this.state.badges.badgesTwo))}
+                            actionPress={this.setModalVisible.bind(this, 2)}
                         />
                     </View>
                     <View style={styles.badges}>
@@ -88,7 +87,7 @@ export default class BadgesScreen extends PureComponent {
                             image={this.state.badges.badgesThree === 'disable' ? badges.disable[2] : badges.eneable[2]}
                             width={100}
                             height={100}
-                            actionPress={this.setModalVisible.bind(this, 3, this.setTitle(this.state.badges.badgesThree))}
+                            actionPress={this.setModalVisible.bind(this, 3)}
                         />
                     </View>
                     <View style={styles.badges}>
@@ -96,7 +95,7 @@ export default class BadgesScreen extends PureComponent {
                             image={this.state.badges.badgesFour === 'disable' ? badges.disable[3] : badges.eneable[3]}
                             width={100}
                             height={100}
-                            actionPress={this.setModalVisible.bind(this, 4, this.setTitle(this.state.badges.badgesFour))}
+                            actionPress={this.setModalVisible.bind(this, 4)}
                         />
                     </View>
                     <View style={styles.badges}>
@@ -104,7 +103,7 @@ export default class BadgesScreen extends PureComponent {
                             image={this.state.badges.badgesFive === 'disable' ? badges.disable[4] : badges.eneable[4]}
                             width={100}
                             height={100}
-                            actionPress={this.setModalVisible.bind(this, 5, this.setTitle(this.state.badges.badgesFive))}
+                            actionPress={this.setModalVisible.bind(this, 5)}
                         />
                     </View>
                     <View style={styles.badges}>
@@ -112,7 +111,7 @@ export default class BadgesScreen extends PureComponent {
                             image={this.state.badges.badgesSix === 'disable' ? badges.disable[5] : badges.eneable[5]}
                             width={100}
                             height={100}
-                            actionPress={this.setModalVisible.bind(this, 6, this.setTitle(this.state.badges.badgesSix))}
+                            actionPress={this.setModalVisible.bind(this, 6)}
                         />
                     </View>
                 </View>
