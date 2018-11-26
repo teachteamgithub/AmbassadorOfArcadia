@@ -21,9 +21,9 @@ export default class GetChildInfo extends PureComponent {
         this.state = {
             name: null,
             age: null,
-            eyes: null,
-            hairColor: null,
-            hairSize: null
+            eyes: 'Preto',
+            hairColor: 'Preto',
+            hairSize: 'Curto'
         }
     }
 
@@ -107,8 +107,8 @@ export default class GetChildInfo extends PureComponent {
                             selectedValue={this.state.hairSize}
                             itemStyle={styles.textInput}
                             onValueChange={(itemValue, itemIndex) => this.setState({ hairSize: itemValue })}>
-                            <Picker.Item label="Longo" value="Longo" />
                             <Picker.Item label="Curto" value="Curto" />
+                            <Picker.Item label="Longo" value="Longo" />
                         </Picker>
                     </View>
                     <View style={styles.buttons}>
