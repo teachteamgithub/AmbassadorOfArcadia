@@ -1,6 +1,8 @@
 os: linux
 language: android
 jdk: oraclejdk8
+node_js:
+  - '8.10.0'
 android:
   components:
     - build-tools-27.0.3
@@ -9,8 +11,10 @@ before_install:
   - yes | sdkmanager "platforms;android-26"
   - yes | sdkmanager "build-tools;27.0.3"
   - nvm install && nvm use
-  - npm install -g "npm@$(jq -r '.engines.npm' package.json)"
+  //- npm install -g "npm@$(jq -r '.engines.npm' package.json)"
+cache:
+  yarn: true
 install:
-  - npm ci
+  - yarn
 script:
   - "./android/gradlew assembleRelease -p android/"

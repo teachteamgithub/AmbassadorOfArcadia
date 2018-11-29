@@ -39,9 +39,5 @@
     "assets": [
       "./src/assets/fonts/"
     ]
-  },
-  "engines": {
-    "node": "10.1.0",
-    "yarn": "1.12.1"
   }
 }
