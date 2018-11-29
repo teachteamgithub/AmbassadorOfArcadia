@@ -13,7 +13,7 @@ before_install:
   - nvm install && nvm use
   //- npm install -g "npm@$(jq -r '.engines.npm' package.json)"
 cache:
-  yarn: true
+  - yarn: true
 install:
   - yarn
 script:
