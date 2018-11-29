@@ -6,6 +6,7 @@
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "new:component": "cross-env ./scripts/new_component.sh",
     "android": "react-native run-android",
+    "android-linux": "react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res && react-native run-android",
     "test": "jest"
   },
   "dependencies": {
@@ -38,5 +39,9 @@
     "assets": [
       "./src/assets/fonts/"
     ]
+  },
+  "engines": {
+    "node": "10.1.0",
+    "yarn": "1.12.1"
   }
 }
