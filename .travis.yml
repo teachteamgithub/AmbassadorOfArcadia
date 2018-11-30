@@ -5,19 +5,8 @@ notifications:
   email: gleydsonsr@gmail.com
 node_js:
   - '8.10.0'
-android:
-  components:
-    - build-tools-27.0.3
-    - android-26
-    - android-23
-
-before_install:
-  - yes | sdkmanager "platforms;android-26"
-  - yes | sdkmanager "build-tools;27.0.3"
-  - nvm install && nvm use
 cache:
-  - yarn: true
-install:
-  - yarn
-script:
-  - "./android/gradlew assembleRelease -p android/"
+  directories:
+    - node_modules
+
+script: npm run ci
