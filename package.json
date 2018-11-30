@@ -7,7 +7,9 @@
     "new:component": "cross-env ./scripts/new_component.sh",
     "android": "react-native run-android",
     "android-linux": "react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res && react-native run-android",
-    "test": "snyk test && jest"
+    "test": "snyk test && jest",
+    "lint": "eslint ./",
+    "ci": "yarn lint"
   },
   "dependencies": {
     "prop-types": "^15.6.2",
@@ -27,8 +29,10 @@
     "babel-jest": "^23.6.0",
     "babel-preset-react-native": "^5.0.2",
     "cross-env": "^5.2.0",
-    "eslint": "^5.5.0",
+    "eslint": "^5.9.0",
     "eslint-config-rallycoding": "^3.2.0",
+    "eslint-plugin-jsx-a11y": "^6.1.2",
+    "eslint-plugin-react": "^7.11.1",
     "jest": "23.6.0",
     "react-test-renderer": "^16.5.0",
     "snyk": "^1.111.1"
