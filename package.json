@@ -31,6 +31,7 @@
     "cross-env": "^5.2.0",
     "eslint": "^5.9.0",
     "eslint-config-rallycoding": "^3.2.0",
+    "eslint-plugin-react": "^7.11.1",
     "jest": "23.6.0",
     "react-test-renderer": "^16.5.0",
     "snyk": "^1.111.1"
