@@ -1,14 +1,32 @@
-os: linux
-language: android
-jdk: oraclejdk8
+notifications:
+  email: gleydsonsr@gmail.com
+matrix:
+  include:
+  - os: linux
+    sudo: false
+    language: android
+    android:
+      components:
+         - tools
+        - platform-tools
+        - tools
+        - build-tools-27.0.3
+        - android-26'
+        - android-23'
+      addons:
+      apt:
+        sources:
+        - sourceline: deb https://dl.yarnpkg.com/debian/ stable main
+          key_url: https://dl.yarnpkg.com/debian/pubkey.gpg
+        - sourceline: deb http://dl.google.com/linux/chrome/deb/ stable main
+          key_url: https://dl-ssl.google.com/linux/linux_signing_key.pub
+        packages:
+        - oracle-java8-installer
+        - oracle-java8-set-default
+        - yarn
+
 node_js:
   - '8.10.0'
-android:
-  components:
-    - build-tools-27.0.3
-    - android-26
-    - android-23
-
 before_install:
   - yes | sdkmanager "platforms;android-26"
   - yes | sdkmanager "build-tools;27.0.3"
