@@ -5276,7 +5276,7 @@ prompts@^0.1.9:
     kleur "^2.0.1"
     sisteransi "^0.1.1"
 
-prop-types@^15.5.10, prop-types@^15.5.8, prop-types@^15.6.0, prop-types@^15.6.1, prop-types@^15.6.2:
+prop-types@^15.5.8, prop-types@^15.6.0, prop-types@^15.6.1, prop-types@^15.6.2:
   version "15.6.2"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.6.2.tgz#05d5ca77b4453e985d60fc7ff8c859094a497102"
   dependencies:
@@ -5465,12 +5465,13 @@ react-native-toast-native@^1.2.1:
   resolved "https://registry.yarnpkg.com/react-native-toast-native/-/react-native-toast-native-1.2.1.tgz#ced3bb7cf26e63e670c881edc51bfa1087423c67"
   integrity sha512-HRu/k+MBSwWk6AFH2OAJwBQBCRWaHC3S52zkA1TcLrUwwTeBbHQfW0Yy9oZBVupMtjlaGeo9bJ143e53vyepeQ==
 
-react-native-vector-icons@^5.0.0:
-  version "5.0.0"
-  resolved "https://registry.yarnpkg.com/react-native-vector-icons/-/react-native-vector-icons-5.0.0.tgz#d0bd6fdda01159db409810718dd04904951a98f5"
+react-native-vector-icons@^6.1.0:
+  version "6.1.0"
+  resolved "https://registry.yarnpkg.com/react-native-vector-icons/-/react-native-vector-icons-6.1.0.tgz#770a3f8ced692d75deb3afbb9829195ceed1eedd"
+  integrity sha512-1GF5I4VWgwnzBtVfAKNgEiR5ziHi5QaKL381wwApMzuiFgIJMNt5XIChuKwKoaiB86s+P5iMcYWxYCyENL96lA==
   dependencies:
     lodash "^4.0.0"
-    prop-types "^15.5.10"
+    prop-types "^15.6.2"
     yargs "^8.0.2"
 
 react-native-walkthrough-tooltip@^0.3.0:
