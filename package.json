@@ -7,7 +7,8 @@
     "new:component": "cross-env ./scripts/new_component.sh",
     "android": "react-native run-android",
     "android-linux": "react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res && react-native run-android",
-    "test": "snyk test && jest"
+    "test": "snyk test && jest",
+    "ci": "yarn lint"
   },
   "dependencies": {
     "prop-types": "^15.6.2",
