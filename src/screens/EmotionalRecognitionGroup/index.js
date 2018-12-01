@@ -91,6 +91,7 @@ class EmotionalRecognitionGroup extends Component {
     }
   }
 
+  // eslint-disable-next-line no-undef
   takePicture = async id => {
     if (this.camera) {
       const options = {
