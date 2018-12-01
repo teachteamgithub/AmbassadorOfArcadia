@@ -11,4 +11,4 @@ after_success:
     - snyk monitor
 install:
   - yarn
-script: yarn test
+script: yarn ci
