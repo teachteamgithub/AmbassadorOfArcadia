@@ -7,6 +7,8 @@ cache:
     - node_modules
 before_install:
   - nvm install && nvm use
+after_success:
+    - snyk monitor
 install:
   - yarn
-script: yarn ci
+script: yarn test
