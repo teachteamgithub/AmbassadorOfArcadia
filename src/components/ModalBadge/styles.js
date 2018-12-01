@@ -3,7 +3,6 @@ import { StyleSheet } from 'react-native';
 import { fonts, colors, metrics } from '../../styles';
 
 const styles = StyleSheet.create({
-
   modalOuterView: {
     flex: 1,
     backgroundColor: 'rgba(0, 0, 0, 0.2)',
@@ -14,10 +13,10 @@ const styles = StyleSheet.create({
     backgroundColor: colors.borderModal,
     borderRadius: 5,
     padding: 5,
-    borderWidth: .5,
+    borderWidth: 0.5,
     borderColor: colors.darker,
     elevation: 5,
-    marginHorizontal: 50
+    marginHorizontal: 50,
   },
 
   contentContainer: {
@@ -26,7 +25,7 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     width: '100%',
     elevation: 2,
-    alignItems: 'center'
+    alignItems: 'center',
   },
 
   closeButtonContainer: {
@@ -55,14 +54,14 @@ const styles = StyleSheet.create({
     fontSize: fonts.regular,
     color: colors.darker,
     marginVertical: 10,
-    textAlign: 'center'
+    textAlign: 'center',
   },
 
   containerTitle: {
     flex: 3,
     alignItems: 'center',
     textAlign: 'center',
-    marginLeft: 50
+    marginLeft: 50,
   },
 
   title: {
@@ -70,7 +69,6 @@ const styles = StyleSheet.create({
     color: colors.white,
     fontSize: fonts.big,
   },
-
 });
 
 export default styles;

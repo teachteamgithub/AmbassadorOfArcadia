@@ -1,7 +1,5 @@
 os: linux
 language: node_js
-notifications:
-  email: gleydsonsr@gmail.com
 node_js:
   - '8.10.0'
 cache:

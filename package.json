@@ -1,14 +1,16 @@
 {
   "name": "AutismApp",
   "version": "0.0.1",
-  "private": true,
+  "private": false,
+  "homepage": "https://github.com/gleydson/AmbassadorOfArcadia",
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "new:component": "cross-env ./scripts/new_component.sh",
     "android": "react-native run-android",
     "android-linux": "react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res && react-native run-android",
-    "test": "snyk test && jest",
+    "test": "snyk test && lint && jest",
     "lint": "eslint ./",
+    "lint:fix": "eslint --ext .js --fix src",
     "ci": "yarn lint"
   },
   "dependencies": {
@@ -31,9 +33,15 @@
     "cross-env": "^5.2.0",
     "eslint": "^5.9.0",
     "eslint-config-rallycoding": "^3.2.0",
+    "eslint-plugin-eslint-comments": "^3.0.1",
+    "eslint-plugin-flowtype": "^3.2.0",
+    "eslint-plugin-jest": "^22.1.0",
     "eslint-plugin-jsx-a11y": "^6.1.2",
+    "eslint-plugin-prettier": "3.0.0",
     "eslint-plugin-react": "^7.11.1",
+    "eslint-plugin-react-native": "^3.5.0",
     "jest": "23.6.0",
+    "prettier": "1.15.3",
     "react-test-renderer": "^16.5.0",
     "snyk": "^1.111.1"
   },
@@ -44,5 +52,6 @@
     "assets": [
       "./src/assets/fonts/"
     ]
-  }
+  },
+  "license": "MIT"
 }

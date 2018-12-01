@@ -6,11 +6,11 @@ import Routes from './Routes';
 import reducers from './store/reducers';
 
 export default class App extends Component {
-    render() {
-        return (
-            <Provider store={createStore(reducers)}>
-                <Routes />
-            </Provider>
-        );
-    }
+  render() {
+    return (
+      <Provider store={createStore(reducers)}>
+        <Routes />
+      </Provider>
+    );
+  }
 }

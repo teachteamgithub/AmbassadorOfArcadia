@@ -3,65 +3,65 @@ import { StyleSheet } from 'react-native';
 import { metrics, colors, fonts } from '../../styles';
 
 const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-    },
+  container: {
+    flex: 1,
+  },
 
-    bgModal: {
-        flex: 1,
-        backgroundColor: 'rgba(0, 0, 0, 0.8)',
-    },
+  bgModal: {
+    flex: 1,
+    backgroundColor: 'rgba(0, 0, 0, 0.8)',
+  },
 
-    containerEt: {
-        position: 'absolute',
-        bottom: 0,
-        left: 0,
-        padding: metrics.padding,
-        zIndex: 1,
-        width: metrics.widthPercentageToDP('40%'),
-        height: metrics.heightPercentageToDP('42%'),
-    },
+  containerEt: {
+    position: 'absolute',
+    bottom: 0,
+    left: 0,
+    padding: metrics.padding,
+    zIndex: 1,
+    width: metrics.widthPercentageToDP('40%'),
+    height: metrics.heightPercentageToDP('42%'),
+  },
 
-    et: {
-        flex: 1,
-        width: undefined,
-        height: undefined,
-        resizeMode: 'contain'
-    },
+  et: {
+    flex: 1,
+    width: undefined,
+    height: undefined,
+    resizeMode: 'contain',
+  },
 
-    containerBalloon: {
-        zIndex: 2,
-        position: 'absolute',
-        left: metrics.widthPercentageToDP('40%'),
-        bottom: metrics.heightPercentageToDP('18%'),
-        padding: 30,
-        backgroundColor: colors.transparent
-    },
+  containerBalloon: {
+    zIndex: 2,
+    position: 'absolute',
+    left: metrics.widthPercentageToDP('40%'),
+    bottom: metrics.heightPercentageToDP('18%'),
+    padding: 30,
+    backgroundColor: colors.transparent,
+  },
 
-    talkBalloonSquare: {
-        width: metrics.widthPercentageToDP('40%'),
-        backgroundColor: colors.primary,
-        borderRadius: 10,
-        padding: metrics.padding
-    },
+  talkBalloonSquare: {
+    width: metrics.widthPercentageToDP('40%'),
+    backgroundColor: colors.primary,
+    borderRadius: 10,
+    padding: metrics.padding,
+  },
 
-    talkBalloonTriangle: {
-        left: metrics.widthPercentageToDP('40%') * -1,
-        bottom: 35,
-        borderTopColor: colors.transparent,
-        borderTopWidth: 13,
-        borderRightWidth: 26,
-        borderRightColor: colors.primary,
-        borderBottomWidth: 13,
-        borderBottomColor: colors.transparent
-    },
+  talkBalloonTriangle: {
+    left: metrics.widthPercentageToDP('40%') * -1,
+    bottom: 35,
+    borderTopColor: colors.transparent,
+    borderTopWidth: 13,
+    borderRightWidth: 26,
+    borderRightColor: colors.primary,
+    borderBottomWidth: 13,
+    borderBottomColor: colors.transparent,
+  },
 
-    textBalloon: {
-        color: colors.white,
-        fontSize: fonts.small,
-        textAlign: 'center',
-        fontFamily: fonts.fontPrimary,
-    }
+  textBalloon: {
+    color: colors.white,
+    fontSize: fonts.small,
+    textAlign: 'center',
+    fontFamily: fonts.fontPrimary,
+  },
 });
 
 export default styles;
