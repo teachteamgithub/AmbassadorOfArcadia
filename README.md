@@ -1,6 +1,7 @@
 # Ambassador Of Arcadia
 
 <p align="center">
+  <a href="https://badge.fury.io/gh/gleydson%2FAmbassadorOfArcadia"><img src="https://badge.fury.io/gh/gleydson%2FAmbassadorOfArcadia.svg" alt="GitHub version" height="18"></a>
   <a href="https://github.com/gleydson/AmbassadorOfArcadia/pulls"><img src="https://img.shields.io/badge/PRs%20-welcome-brightgreen.svg" alt="PR's welcome"></a>
   <a href="https://travis-ci.org/gleydson/AmbassadorOfArcadia"><img src="https://travis-ci.org/gleydson/AmbassadorOfArcadia.svg?branch=master" alt="Travis Build Status"></a>
   <a href="https://codecov.io/gh/gleydson/AmbassadorOfArcadia"><img src="https://codecov.io/gh/gleydson/AmbassadorOfArcadia/branch/master/graph/badge.svg" /></a>
