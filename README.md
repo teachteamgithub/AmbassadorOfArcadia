@@ -1,12 +1,15 @@
 # Ambassador Of Arcadia
 
 <p align="center">
-  <a href="https://badge.fury.io/gh/gleydson%2FAmbassadorOfArcadia"><img src="https://badge.fury.io/gh/gleydson%2FAmbassadorOfArcadia.svg" alt="GitHub version" height="18"></a>
-  <a href="https://github.com/gleydson/AmbassadorOfArcadia/pulls"><img src="https://img.shields.io/badge/PRs%20-welcome-brightgreen.svg" alt="PR's welcome"></a>
+  <a href="https://github.com/gleydson/AmbassadorOfArcadia/pulls"><img src="https://img.shields.io/github/issues-pr/gleydson/AmbassadorOfArcadia.svg" alt="PR's welcome"></a>
+  <a href="https://github.com/gleydson/AmbassadorOfArcadia/issues"><img src="https://img.shields.io/github/issues/gleydson/AmbassadorOfArcadia.svg" alt="Open issues"></a>
+  <a href="https://github.com/gleydson/AmbassadorOfArcadia"><img src="https://img.shields.io/github/stars/gleydson/AmbassadorOfArcadia.svg" alt="Stars"/></a>
+  <a href=""><img src="https://img.shields.io/github/forks/gleydson/AmbassadorOfArcadia.svg" alt="Forks"/></a>
+  <a http="https://github.com/gleydson/AmbassadorOfArcadia/releases"><img src="https://img.shields.io/github/release/gleydson/AmbassadorOfArcadia.svg" alt="Release"/></a>
   <a href="https://travis-ci.org/gleydson/AmbassadorOfArcadia"><img src="https://travis-ci.org/gleydson/AmbassadorOfArcadia.svg?branch=master" alt="Travis Build Status"></a>
   <a href="https://codecov.io/gh/gleydson/AmbassadorOfArcadia"><img src="https://codecov.io/gh/gleydson/AmbassadorOfArcadia/branch/master/graph/badge.svg" /></a>
   <a href="https://snyk.io/test/github/gleydson/AmbassadorOfArcadia"><img src="https://snyk.io/test/github/gleydson/AmbassadorOfArcadia/badge.svg" alt="Known Vulnerabilities" data-canonical-src="https://snyk.io/test/github/gleydson/AmbassadorOfArcadia" style="max-width:100%;"/></a>
-  <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License: MIT"></a>
+  <a href="https://github.com/gleydson/AmbassadorOfArcadia/blob/master/LICENSE"><img src="https://img.shields.io/github/license/gleydson/AmbassadorOfArcadia.svg" alt="License: MIT"></a>
 </p>
 
 Ambassador of Arcadia is an educational game aimed at children with Autism Spectrum Disorder (ASD).
