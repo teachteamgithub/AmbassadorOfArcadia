@@ -13,4 +13,4 @@ after_success:
   - codecov --file coverage/lcov.info --disable search
 install:
   - yarn
-script: yarn test:lint
+script: yarn test:codecov && yarn test:lint
