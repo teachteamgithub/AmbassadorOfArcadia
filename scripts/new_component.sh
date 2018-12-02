@@ -43,16 +43,14 @@ mkdir src/components/${COMPONENT};
 log "Creating index.jsx for ${COMPONENT}";
 
 cat > "$DIRECTORY/index.jsx" <<- EOM
-import ${COMPONENT} from '${COMPONENT}.jsx';
-
-export default ${COMPONENT};
+export { default } from './${COMPONENT}';
 EOM
 
 log "Creating ${COMPONENT}.jsx for ${COMPONENT}";
 
 cat > "$DIRECTORY/${COMPONENT}.jsx" <<- EOM
 import React from 'react';
-import { View } from 'react-native';
+import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
 
 import styles from './${COMPONENT}.styles';
@@ -60,17 +58,17 @@ import styles from './${COMPONENT}.styles';
 const ${COMPONENT} = props => {
   return (
     <View style={styles.container}>
-      // TODO:
+      <Text>${COMPONENT} Component created!</Text>
     </View>
   );
-}
-
-${COMPONENT}.propTypes = {
-  
 };
 
-${COMPONENT}.defaultProps = {
+AnyButtomWithPressEffect.propTypes = {
+  // TODO:
+};
 
+AnyButtomWithPressEffect.defaultProps = {
+  // TODO:
 };
 
 export default ${COMPONENT};
@@ -84,9 +82,9 @@ import { StyleSheet } from 'react-native';
 import { fonts, colors, metrics } from '../../styles';
 
 const styles = StyleSheet.create({
-    container: {
-      flex: 1
-    }
+  container: {
+    flex: 1,
+  },
 });
 
 export default styles;
@@ -96,14 +94,15 @@ log "Creating ${COMPONENT}.test.jsx";
 
 cat > "$DIRECTORY/${COMPONENT}.test.jsx" <<- EOM
 import React from 'react';
-import enzymeHelpers from '../../../__tests__/helpers';
-import ${COMPONENT} from '${COMPONENT}';
+import { shallow } from 'enzyme';
+import examples from './examples';
 
 describe('Testing ${COMPONENT} Component', () => {
-  it('should render correctly', () => {
-    const wrapper = enzymeHelpers.shallow(<${COMPONENT} />);
-
+  it('should render correctly without props', done => {
+    const wrapper = shallow(<${COMPONENT} />);
+    expect(wrapper).toHaveLength(1);
     expect(wrapper).toMatchSnapshot();
+    done();
   });
 });
 EOM
