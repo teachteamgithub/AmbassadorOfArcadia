@@ -275,11 +275,12 @@
     },
     {
       "files": [
-        "**/__fixtures__/**/*.js",
-        "**/__mocks__/**/*.js",
-        "**/__tests__/**/*.js",
-        "jest/**/*.js",
-        "RNTester/**/*.js"
+        "**/*.test.js?(x)",
+        "**/__fixtures__/**/*.js?(x)",
+        "**/__mocks__/**/*.js?(x)",
+        "**/__tests__/**/*.js?(x)",
+        "jest/**/*.js?(x)",
+        "RNTester/**/*.js?(x)"
       ],
       "globals": {
         // Expose some Jest globals for test helpers
@@ -293,7 +294,7 @@
     },
     {
       "files": [
-        "**/__tests__/**/*-test.js"
+        "**/__tests__/**/*.test.js?(x)"
       ],
       "env": {
         "jasmine": true,

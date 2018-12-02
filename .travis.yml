@@ -8,7 +8,9 @@ cache:
 before_install:
   - nvm install && nvm use
 after_success:
-    - snyk monitor
+  - snyk monitor
+  - pip install --user codecov
+  - codecov --file coverage/lcov.info --disable search
 install:
   - yarn
 script: yarn ci

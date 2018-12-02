@@ -40,18 +40,27 @@ log "Creating ${COMPONENT} folder";
 
 mkdir src/components/${COMPONENT};
 
-log "Creating index.js for ${COMPONENT}";
+log "Creating index.jsx for ${COMPONENT}";
 
-cat > "$DIRECTORY/index.js" <<- EOM
+cat > "$DIRECTORY/index.jsx" <<- EOM
+import ${COMPONENT} from '${COMPONENT}.jsx';
+
+export default ${COMPONENT};
+EOM
+
+log "Creating ${COMPONENT}.jsx for ${COMPONENT}";
+
+cat > "$DIRECTORY/${COMPONENT}.jsx" <<- EOM
 import React from 'react';
 import { View } from 'react-native';
 import PropTypes from 'prop-types';
 
-import styles from './styles';
+import styles from './${COMPONENT}.styles';
 
 const ${COMPONENT} = props => {
   return (
     <View style={styles.container}>
+      // TODO:
     </View>
   );
 }
@@ -67,17 +76,35 @@ ${COMPONENT}.defaultProps = {
 export default ${COMPONENT};
 EOM
 
-log "Creating styles.js for ${COMPONENT}";
+log "Creating ${COMPONENT}.styles.jsx for ${COMPONENT}";
 
-cat > "$DIRECTORY/styles.js" <<- EOM
+cat > "$DIRECTORY/${COMPONENT}.styles.jsx" <<- EOM
 import { StyleSheet } from 'react-native';
 
 import { fonts, colors, metrics } from '../../styles';
 
-export default styles = StyleSheet({
+const styles = StyleSheet.create({
     container: {
-      flex: 1,
+      flex: 1
     }
+});
+
+export default styles;
+EOM
+
+log "Creating ${COMPONENT}.test.jsx";
+
+cat > "$DIRECTORY/${COMPONENT}.test.jsx" <<- EOM
+import React from 'react';
+import enzymeHelpers from '../../../__tests__/helpers';
+import ${COMPONENT} from '${COMPONENT}';
+
+describe('Testing ${COMPONENT} Component', () => {
+  it('should render correctly', () => {
+    const wrapper = enzymeHelpers.shallow(<${COMPONENT} />);
+
+    expect(wrapper).toMatchSnapshot();
+  });
 });
 EOM
 
