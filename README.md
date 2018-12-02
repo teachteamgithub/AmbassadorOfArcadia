@@ -3,8 +3,6 @@
 <p align="center">
   <a href="https://github.com/gleydson/AmbassadorOfArcadia/pulls"><img src="https://img.shields.io/github/issues-pr/gleydson/AmbassadorOfArcadia.svg" alt="PR's welcome"></a>
   <a href="https://github.com/gleydson/AmbassadorOfArcadia/issues"><img src="https://img.shields.io/github/issues/gleydson/AmbassadorOfArcadia.svg" alt="Open issues"></a>
-  <a href="https://github.com/gleydson/AmbassadorOfArcadia"><img src="https://img.shields.io/github/stars/gleydson/AmbassadorOfArcadia.svg" alt="Stars"/></a>
-  <a href=""><img src="https://img.shields.io/github/forks/gleydson/AmbassadorOfArcadia.svg" alt="Forks"/></a>
   <a http="https://github.com/gleydson/AmbassadorOfArcadia/releases"><img src="https://img.shields.io/github/release/gleydson/AmbassadorOfArcadia.svg" alt="Release"/></a>
   <a href="https://travis-ci.org/gleydson/AmbassadorOfArcadia"><img src="https://travis-ci.org/gleydson/AmbassadorOfArcadia.svg?branch=master" alt="Travis Build Status"></a>
   <a href="https://codecov.io/gh/gleydson/AmbassadorOfArcadia"><img src="https://codecov.io/gh/gleydson/AmbassadorOfArcadia/branch/master/graph/badge.svg" /></a>
