@@ -8,6 +8,7 @@ YELLOW='\033[00;33m';
 CYAN='\033[00;36m';
 COMPONENT=$1;
 DIRECTORY=src/components/${COMPONENT};
+DIRECTORY_TEST=__tests__/components;
 
 # Functions
 function log() {
@@ -29,6 +30,11 @@ function info() {
 if [ $# -lt 1 ]; then
     echo "You need to provide the name COMPONENT";
     exit 0;
+fi
+
+if [ ! -d "$DIRECTORY_TEST" ]; then
+  log "Creating ${DIRECTORY_TEST} folder";
+  mkdir __tests__/components;
 fi
 
 if [ -d "$DIRECTORY" ]; then
@@ -65,6 +71,12 @@ ${COMPONENT}.defaultProps = {
 };
 
 export default ${COMPONENT};
+EOM
+
+log "Creating test.js for ${COMPONENT}";
+
+cat > "$DIRECTORY_TEST/${COMPONENT}.test.js" <<- EOM
+
 EOM
 
 log "Creating styles.js for ${COMPONENT}";
