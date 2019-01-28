@@ -5568,19 +5568,19 @@ react@16.6.1:
     prop-types "^15.6.2"
     scheduler "^0.11.0"
 
-reactotron-core-client@^2.1.0:
-  version "2.2.0"
-  resolved "https://registry.yarnpkg.com/reactotron-core-client/-/reactotron-core-client-2.2.0.tgz#4f114172d1fb60fdd4602d5832031d31dcf501be"
-  integrity sha512-iR/rlSNsKekv8Fy0JFZgCS4W72teJ+0+CrwX53Yufd5YfmTJ9u+N/LDizp/DOlCqBHB70iP67S9jj3coSIIxuA==
+reactotron-core-client@^2.2.1:
+  version "2.2.1"
+  resolved "https://registry.yarnpkg.com/reactotron-core-client/-/reactotron-core-client-2.2.1.tgz#2b7417df7831419ce9bc44b025f86012fda7e582"
+  integrity sha512-VINa2vuSMOCqRCaRRdTdk10vrj7xRhRUN1hpbvtANMlZmByQOf+kqRVqR6uad2jPE3nn/47V7F23MAkS8lDNug==
 
 reactotron-react-native@^2.1.3:
-  version "2.1.3"
-  resolved "https://registry.yarnpkg.com/reactotron-react-native/-/reactotron-react-native-2.1.3.tgz#c31e97dd15da7e5817db78167e74787c7bdec19d"
-  integrity sha512-xSWJDNvrD+D1wcJyna8/eDe099/pgxVqbm9AIRqeWiicVQvbsq9s2ymeprG4ISn0kSy2t6/orCzHKe9vyX9Fnw==
+  version "2.1.5"
+  resolved "https://registry.yarnpkg.com/reactotron-react-native/-/reactotron-react-native-2.1.5.tgz#2726d5f057c48933188df6a100c3ee168eeb4119"
+  integrity sha512-HgwdT5BXR+I/R9xI9F3lpMFc2OuN8HO7OiuR7HqeCVSUz87OKogoGGxH5eCL8uyzfFqBTUxh20Lqxn6/0+nsVg==
   dependencies:
     mitt "^1.1.2"
     prop-types "^15.5.10"
-    reactotron-core-client "^2.1.0"
+    reactotron-core-client "^2.2.1"
 
 read-pkg-up@^1.0.1:
   version "1.0.1"
