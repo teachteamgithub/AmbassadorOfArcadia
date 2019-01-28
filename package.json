@@ -49,7 +49,7 @@
     "eslint-plugin-jsx-a11y": "^6.1.2",
     "eslint-plugin-react": "^7.11.1",
     "jest": "23.6.0",
-    "metro-react-native-babel-preset": "0.50.0",
+    "metro-react-native-babel-preset": "0.51.1",
     "react-test-renderer": "16.6.1",
     "reactotron-react-native": "^2.1.3"
   },
